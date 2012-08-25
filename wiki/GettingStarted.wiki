@@ -1,0 +1,10 @@
+Context setting regarding the project. 
+
+= Introduction =
+
+Understanding workflow and setting up our project.
+
+
+= Details =
+
+1) Vinayak - Task is to create a nice logo for our project. It would be     good to have a logo.
