@@ -9,11 +9,11 @@ Minutes of meeting with Registar - Ashwani Sir
 2)Additional features for management needed : 
     i)Report generation
  
-    ii)Pending Requests Status feaure
+    ii)Pending Requests Status feature
 
-    iii)Record time for completion and closure of request
+    iii)Record times for completion and closure of request
 
-    iv)How many requests received 
+    iv)How many requests received should be recorded
 
     v)Additional features that can be included - leave form, local travel  
 
