@@ -1,0 +1,15 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+Tasks Completed
+
+
+= Details =
+
+1) Questionnaires Ready.
+2) Appointment Mail Dropped.
+
+= Current Objective =
+
+Meeting with Anoop Sir.
