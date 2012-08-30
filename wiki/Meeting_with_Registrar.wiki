@@ -9,10 +9,14 @@ Minutes of meeting with Ashwani Sir
 1)The administration has no concerns/apprehensions about digitizing the current manual process 
 
 2)Additional features for management needed : 
-    i)Report generation 
+    i)Report generation
+ 
     ii)Pending Requests Status feaure
+
     iii)Record time for completion and closure of request
+
     iv)How many requests received 
+
     v)Additional features that can be included - leave form, local travel  
 
 3)A mechanism to know that the form has actually been authorized by the previous person before it has reached next person in the process , should be there .
