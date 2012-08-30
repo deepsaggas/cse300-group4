@@ -1,0 +1,2 @@
+[http://cse300-group4.googlecode.com/files/BusinessProcessModel%20%281%29.jpeg Here] is the Business process model for our project.
+'<img src="http://cse300-group4.googlecode.com/files/BusinessProcessModel%20%281%29.jpeg" alt="Logo"/>'
