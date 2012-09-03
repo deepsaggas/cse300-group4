@@ -1,5 +1,4 @@
 
-
 = Introduction =
 
 Tasks Completed
@@ -9,7 +8,8 @@ Tasks Completed
 
 1) Questionnaires Ready.
 2) Appointment Mail Dropped.
-
+3)Administration details acquired
+4)UI design in progress
 = Current Objective =
 
-Meeting with Anoop Sir.
+Complete meetings with faculty 
