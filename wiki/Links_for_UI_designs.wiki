@@ -1,11 +1,17 @@
 Hey just saw  IBM LOTUS , can derive some ideas of designs:
 
 
-http://www-01.ibm.com/software/lotus/images/MailSide_760x527.jpg  - Integration with mail
+For integration with mail 
+
+
+http://www-01.ibm.com/software/lotus/images/MailSide_760x527.jpg  - 
+
+
+Faculty should be able to see status of his request on the calender
 
 http://www-01.ibm.com/software/lotus/images/weekview_760x523.jpg  and 
 http://www-01.ibm.com/software/lotus/images/Notes-iCal_723x432.jpg  -
-Faculty should be able to see status of his request on the calender
 
+All the administration details like who is to be sent the notification for what process
 
-http://www-01.ibm.com/software/lotus/images/ContaactsBusinessCardView_723x524.jpg --> All the administration details like who is to be sent the notification for what process
+http://www-01.ibm.com/software/lotus/images/ContaactsBusinessCardView_723x524.jpg --> 
