@@ -7,9 +7,9 @@ For integration with mail
 http://www-01.ibm.com/software/lotus/images/MailSide_760x527.jpg  - 
 
 
-Faculty should be able to see status of his request on the calender
+Faculty should be able to see status of a particular request on his calender
 
-http://www-01.ibm.com/software/lotus/images/weekview_760x523.jpg  and 
+
 http://www-01.ibm.com/software/lotus/images/Notes-iCal_723x432.jpg  -
 
 All the administration details like who is to be sent the notification for what process
