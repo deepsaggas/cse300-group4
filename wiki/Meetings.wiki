@@ -4,11 +4,11 @@ Make the application as a Google App which is not only operable from the app but
 (This meeting was done by Soumya and Deepanker)
 
 ==Meeting With Registrar==
-= Introduction =
+=== Introduction ===
 
 Minutes of meeting with Registar - Ashwani Sir
 
-= Details =
+==== Details ====
 
 1)The administration has no concerns/apprehensions about digitizing the current manual process 
 
