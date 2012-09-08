@@ -1,4 +1,7 @@
-[http://cse300-group4.googlecode.com/files/BusinessProcessModel%20%281%29.jpeg Here] is the Business process model for our project.
+#labels Phase-Requirements
+[http://cse300-group4.googlecode.com/files/BusinessProcessModel%20%281%29.jpeg Here] is the Business process model for Equipment Purchase.
 '<img src="http://cse300-group4.googlecode.com/files/BusinessProcessModel%20%281%29.jpeg" alt="Logo"/>'
 
 For the pptx version please click [http://code.google.com/p/cse300-group4/downloads/detail?name=Business%20Process%20Model%20for%20Expenses%20Payment.pptm&can=2&q= here].
+
+For Business Process Model for Out Station Travel click [http://cse300-group4.googlecode.com/svn/wiki/Business%20Process%20Model%20for%20Outstation%20Travel.pptm here]
