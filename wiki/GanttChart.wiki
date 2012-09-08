@@ -1,2 +1,2 @@
 Gantt Chart for the work plan of next two weeks till 10/09/2012
-'<img src="http://cse300-group4.googlecode.com/files/GanttChart.JPG" alt="Logo"/>' . The detailed Work Flow can be downloaded from [http://cse300-group4.googlecode.com/files/WorkFlow.xlsx here]
+'<img src="http://cse300-group4.googlecode.com/svn/wiki/GanttChart.JPG" alt="Logo"/>' . The detailed Work Flow can be downloaded from [http://cse300-group4.googlecode.com/svn/wiki/Gantt%20Chart.xlsx here]
