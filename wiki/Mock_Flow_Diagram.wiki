@@ -1,0 +1,4 @@
+[http://cse300-group4.googlecode.com/svn/wiki/Mock%20FlowDiagram.pdf This] is a rough State Transition diagram of the general rules followed in the Business Process Model of our project.
+
+This is does not represent the final Business Process Model and is only for testing.
+The diagram is created by Paritosh Mittal 
