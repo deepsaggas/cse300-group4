@@ -1,4 +1,13 @@
 #labels Phase-Requirements
+Update 2:-
+Updated version of [http://cse300-group4.googlecode.com/svn/wiki/BPM%2030.PNG Equipment Purchase Form(30% complete)] (Yash Lamba)
+--------------------------------------------------------------------------
+Update 1:-
+[http://cse300-group4.googlecode.com/svn/wiki/Mock%20FlowDiagram.pdf This] is a rough State Transition diagram of the general rules followed in the Business Process Model of our project.
+
+This is does not represent the final Business Process Model and is only for testing.
+The diagram is created by Paritosh Mittal 
+--------------------------------------------------------------------------
 [http://cse300-group4.googlecode.com/files/BusinessProcessModel%20%281%29.jpeg Here] is the Business process model for Equipment Purchase.
 '<img src="http://cse300-group4.googlecode.com/svn/wiki/BusinessProcessModel%20(1).jpeg" alt="Logo"/>'
 
