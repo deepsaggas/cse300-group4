@@ -1,0 +1,35 @@
+=Update:-=
+Improved Faculty Screen Draft
+
+http://cse300-group4.googlecode.com/svn/wiki/Snapshot_2012908%20(2).jpg
+------------------------------------------------------------------------------------------------------------------------------------------------
+==Update:-==
+
+Rough Draft of Login form:-
+
+http://cse300-group4.googlecode.com/svn/wiki/08092012025.jpg -
+
+Rough Draft for Faculty Screen:-
+
+http://cse300-group4.googlecode.com/svn/wiki/08092012024.jpg -
+
+
+(Deepanker & Paritosh)
+------------------------------------------------------------------------------------------------------------------------------------------------
+Hey just saw  IBM LOTUS as suggested by Srikant Sir , can derive some ideas of designs:
+
+
+For integration with mail 
+
+
+http://www-01.ibm.com/software/lotus/images/MailSide_760x527.jpg  - 
+
+
+Faculty should be able to see status of a particular request on his calender
+
+
+http://www-01.ibm.com/software/lotus/images/Notes-iCal_723x432.jpg  -
+
+All the administration details like who is to be sent the notification for what process
+
+http://www-01.ibm.com/software/lotus/images/ContaactsBusinessCardView_723x524.jpg --> 
