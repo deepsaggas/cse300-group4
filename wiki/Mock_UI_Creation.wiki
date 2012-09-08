@@ -1,11 +1,8 @@
 =Update:-=
 
-Login Home Page :
-
-http://cse300-group4.googlecode.com/svn/wiki/EquipmentPurchase.jpg -
-
 A web page for the Equipment Purchase form.
 
+http://cse300-group4.googlecode.com/svn/wiki/EquipmentPurchase.jpg -
 
 
 (Soumya Vardhan Singh)
