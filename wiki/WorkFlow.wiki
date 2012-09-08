@@ -1,3 +1,4 @@
 Work Flow Status 
 [https://docs.google.com/a/iiitd.ac.in/spreadsheet/ccc?key=0AkijtBOQH5PIdG5vZ0xZUXpXdlZDczJ0LVU0S3ZxRmc here]
 (Akshay Gupta)
+This file contains the workflow of the first two weeks of the project, represented in the form of a table and a Gantt Chart.
