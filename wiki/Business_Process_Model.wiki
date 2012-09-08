@@ -1,7 +1,7 @@
 #labels Phase-Requirements
 =Update 3:-=
 Final version of Business Process Model for Equipment Purchase
-[http://code.google.com/p/cse300-group4/source/browse/wiki/Business%20Process%20Model%20for%20Equipment%20Purchase.PNG] (Yash Lamba)
+[http://cse300-group4.googlecode.com/svn/wiki/Business%20Process%20Model%20for%20Equipment%20Purchase.PNG] (Yash Lamba)
 --------------------------------------------------------------------------
 =Update 2:-=
 Updated version of [http://cse300-group4.googlecode.com/svn/wiki/BPM%2030.PNG Equipment Purchase Form(30% complete)] (Yash Lamba)
