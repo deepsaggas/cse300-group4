@@ -1,3 +1,4 @@
+#summary UI Screens
 =Update:-=
 
 A web page for the Equipment Purchase form.
