@@ -1,6 +1,6 @@
 =Meetings=
 ==Minutes of Meeting with Dr.Debajyoti==
-Make the application as a Google App which is not only operable from the app but also through E-mail i.e. if someone replies as Approved in e-mail den it should also be reflected in the e-mail and if there is some update to the request then it is also conveyed through e-mail.
+Make the application as a Google App which is not only operable from the app but also through E-mail i.e. if someone replies as Approved in e-mail den it should also be reflected in the app and if there is some update to the request then it should also be conveyed through e-mail.
 (This meeting was done by Soumya and Deepanker)
 
 ==Meeting With Registrar==
