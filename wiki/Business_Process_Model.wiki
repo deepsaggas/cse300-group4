@@ -1,4 +1,5 @@
 #labels Phase-Requirements
+Creation of Business Process Model for the Project
 =Update 3:-=
 Final version of Business Process Model for Equipment Purchase
 [http://cse300-group4.googlecode.com/svn/wiki/Business%20Process%20Model%20for%20Equipment%20Purchase.png] (Yash Lamba)
