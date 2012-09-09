@@ -1,4 +1,14 @@
 #summary UI Screens
+
+=Update:-=
+
+Faculty Page :
+
+http://cse300-group4.googlecode.com/svn/wiki/faculty.JPG -
+
+(Abhishek Gupta)
+
+------------------------------------------------------------------------------------------------------------------------------------------------
 =Update:-=
 
 A web page for the Equipment Purchase form.
@@ -26,9 +36,8 @@ Login Home Page :
 
 http://cse300-group4.googlecode.com/svn/wiki/LoginHome.JPG -
 
-
-
 (Abhishek Gupta)
+------------------------------------------------------------------------------------------------------------------------------------------------
 
 Improved Faculty Screen Draft
 
