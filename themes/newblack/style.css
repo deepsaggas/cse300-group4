@@ -1,0 +1,197 @@
+/*
+Theme Name: New Black 2011
+Theme URI: http://www.newblack.me
+Description: Custom theme for Neon/Windows
+Author: Jim Tattersall
+Author URI: http://www.newblack.me
+Version: 1.0
+*/
+
+img#wpstats{visibility:hidden}
+*{border:0;margin:0;padding:0;text-decoration:none;list-style:none;}
+@font-face{font-family:'Segoe';src:url('fonts/Segoe.eot');}
+@font-face{font-family:'Segoe';src:url('fonts/Segoe.woff') format('woff'),url('fonts/Segoe.svg#Segoe') format('svg');}
+.indent{text-indent:-9999px;}
+.left{float:left;}
+h1{font:26px 'Segoe';}
+h2{font:bold 16px/25px 'Segoe';letter-spacing:1px;}
+h3{font:12px 'Segoe';letter-spacing:1px;margin:15px 0;}
+p{font:14px/20px 'Segoe';margin-top:25px;}
+body{font-family:'Segoe',helvetica,arial,sans-serif;font-size:12px;color:#333;}
+#page{width:940px;margin:0 auto;}
+#header{margin:40px 0;height:62px;}
+#header #left_logo{padding-top:5px;float:left;}
+#header #right_logo{float:right;background:url('images/logo-winphone.png') no-repeat;height:57px;width:300px;}
+#header h1{text-indent:-9999px;background:url('images/logo.png');height:57px;width:259px;}
+#content{float:left;width:640px;position:relative;padding-bottom:25px;}
+#content.bv{width:620px;padding-right:20px;}
+#content .block{margin:0 20px 20px 0;height:220px;width:300px;overflow:hidden;position:relative;float:left;}
+#content .block .wrap{position:absolute;top:0;left:0;height:300px;width:300px;}
+#content .block .wrap .arrow{position:absolute;bottom:0;right:0;height:31px;width:31px;background-image:url('images/arrow-red.png');}
+#content .block .wrap .texture{position:absolute;top:0;left:0;background:url('img/login-box-backg.png');height:300px;width:300px;}
+#content .block .wrap .texture.clean{background:none;}
+#content .block .wrap .texture img{position:absolute;z-index:-1;}
+#content .block .wrap .text{position:absolute;top:-170px;left:0;width:270px;padding:15px;height:140px;color:#fff;background:url('images/arrow-alt.png')  #8aa8ff no-repeat 255px 125px;overflow:hidden;}
+#content .block .wrap .text p{margin:10px 0;}
+#content .block .wrap .text h3{text-transform:uppercase;}
+#content .block.double{width:620px;height:230px;background-color: #8aa8ff;}
+#content .block.double #product_image{width:232px;height:300px;background:url('/wp-content/uploads/product-feature.png') no-repeat 31px 13px;float:left; background-position: bottom right;}
+#content .block.double #text{width:334px;height:230px;float:left;padding:70px 27px 0;}
+#content .block.double #text h3{font-size:19px;color:#fff;letter-spacing:0;margin:0;}
+#content .block.double #text #rating{margin:34px 0;font-size:20px;line-height:20px;color:#fff;}
+#content .block.double #text #rating .star{background:url('images/star-white.png') no-repeat 0 1px;width:20px;height:20px;display:block;float:left;margin-right:10px;}
+#content .block.double #text #rating .star.last{margin-right:25px;}
+#content .block.double #text .links{border-top:1px solid #fff;color:#fff;font-size:14px;line-height:14px;padding-top:5px;}
+#content .block.double #text .links a{color:#fff;}
+#content .block#twitter{background-color: #8aa8ff;color:#fff;padding:18px;width:264px;height:264px;}
+#content .block#twitter h2{font-size:23px;font-weight:normal;}
+#content .block#twitter p{line-height:25px;}
+#content .block#twitter a{color:#fff;text-decoration:underline;}
+#content .block#twitter .slider{width:1128px;position:absolute;}
+#content .block#twitter .tweet{float:left;width:264px;margin-right:18px;}
+#content .block#twitter span.timeago{text-transform:uppercase;}
+#content .block#twitter #controls{left:104px;bottom:0;position:absolute;}
+#content .block#twitter #controls a{width:12px;height:12px;border:1px solid #fff;float:left;margin:0 5px 12px;display:block;}
+#content .block#twitter #controls a.active{background-color:#fff;}
+#content.post .block{background-color:#8aa8ff;color:#fff;}
+#content.post .text{padding:15px 23px;}
+#content.post h2{font-size:22px;line-height:30px;font-weight:normal;}
+#content.post.text h3{text-transform:uppercase;}
+#content.post #post_content{padding-right:20px;float:left;padding-bottom:20px;}
+#content.post #post_content a{color:#000;text-decoration:underline;}
+#content.post .block .texture{background:url('images/texture.png');height:300px;width:300px;z-index:1;position:absolute;}
+#content.post .block .texture.clean{background:#fff;}
+#content #post_bar{height:32px;width:620px;margin-bottom:20px;float:left;}
+#content #post_bar #back{float:left;font-size:14px;}
+#content #post_bar #back a{color:#000;}
+#content #post_bar #back img{margin-right:15px;vertical-align:middle;}
+#content #post_bar #share{float:right;font-size:16px;padding-right:45px;position:relative;}
+#plusone{position:absolute;right:0;top:0;padding-top:4px;}
+#content #post_bar #share img{margin-left:10px;vertical-align:middle;}
+#post_controls{width:620px;padding-top:10px;margin-bottom:20px;float:left;}
+#post_controls img{vertical-align:middle;}
+#post_controls a{color:#000;font-size:14px;}
+
+.rlp.phones{background-color: #8aa8ff;}
+.rlp .title{height:42px;width:260px;padding:12px 20px 12px;background-color: #8aa8ff;position:absolute;z-index:2;font-size:13px;line-height:13px;color:#fff;}
+.rlp h2{font-size:22px;line-height:22px;font-weight:normal;color:#fff;margin-bottom:3px;height:25px;overflow:hidden;}
+.rlp .title .star{background:url('images/star-white-small.png') no-repeat;width:11px;height:10px;display:block;float:left;margin-right:3px;margin-top:2px;}
+
+.rlp.phones h2{height:80px;width:230px;line-height:30px;}
+.rlp.phones select{width:260px;}
+
+.rlp.double .title{width:580px;position:relative;float:left;}
+.rlp.double .title h2{float:left;}
+.rlp.double .rating{float:right;}
+.rlp.double .rating{font-size:23px;line-height:23px;}
+.rlp.double .title .star{background:url('images/star-white.png') no-repeat;width:19px;height:20px;margin-right:6px;margin-top:3px;}
+.rlp.double .text{width:620px;height:234px;position:relative;float:left;color:#fff;}
+.rlp.double .text .feature{float:left;width:300px;}
+.rlp.double .text h2{float:left;width:280px;padding:0 20px;margin-bottom:8px;}
+.rlp.double .text h3{float:left;width:280px;padding:0 20px;height:164px;overflow:hidden;font-size:16px;margin:0;line-height:26px;}
+.rlp.double .arrow{background-color:#fff;position:absolute;bottom:3px;right:3px;width:38px;height:38px;}
+
+
+#content .rlp .wrap{height:234px;top:66px;}
+#content .rlp .wrap .text{height:179px;top:-209px;background: #8aa8ff;padding:15px 20px;width:260px;}
+#content .rlp .wrap .text h3{margin:0;text-transform:none;font-size:16px;height:142px;overflow:hidden;}
+#content .rlp .wrap .text .links{margin-top:8px;border-top:1px solid #fff;padding-top:10px;font-size:14px;letter-spacing:1px;}
+#content .rlp .wrap .text .links a{color:#fff;font-weight:bold;}
+
+#product_info .image_container{width:300px;float:left;margin-right:20px;}
+#product_info .title_container{float:left;width:300px;}
+#product_info .title_container h2{font-size:26px;margin:0 0 15px;}
+#product_info .title_container h3{margin:0;font-size:18px;}
+#product_info .title_container h4{font-size:12px;font-weight:bold;margin:10px 0 5px;}
+#product_info .title_container span img{margin-right:5px;}
+
+
+#comments #comment_count_0{background:url('images/comments-count-0.png')  #8aa8ff no-repeat 35px 74px;}
+#comments #comment_count_1-3{background:url('images/comments-count-1-3.png')  #8aa8ff no-repeat 35px 74px;}
+#comments #comment_count_4plus{background:url('images/comments-count-4-or-more.png')  #8aa8ff no-repeat 35px 74px;}
+#comments .comment_count h3{font-size:22px;position:absolute;bottom:0;left:0;margin:0 24px 18px;line-height:22px;}
+#comments .comment_count span{font-size:110px;position:absolute;top:43px;left:172px;width:120px;font-weight:bold;text-align:center;}
+
+#comments .block.comment{width:298px;height:298px;border:1px solid #ccc;background-color:#fff;color:#000;}
+#comments .block.comment .content{padding:15px;height:268px;}
+#comments .block.comment img.avatar{float:left;}
+#comments .block.comment .author{float:left;margin:4px 18px 0;font-size:26px;line-height:26px;}
+#comments .block.comment .posted_at{float:left;margin:10px 18px 0;color:#a6a6a6;}
+#comments .block.comment .text{clear:both;float:left;overflow:hidden;height:170px;width:268px;padding:0;}
+#comments .block.comment .text p{margin-top:15px;}
+#comments .block.comment .text a{color:#000;text-decoration:underline;}
+#comments .reply{float:right;margin-top:10px;font-size:26px;line-height:26px;}
+#comments .reply a{color:#000;}
+#comments .reply img{vertical-align:middle;}
+#comments .more.reply{float:left;display:none;font-size:13px}
+#comments .more.reply.trackback{position:absolute;bottom:10px;right:10px;display:block;}
+#cboxLoadedContent img.avatar{float:left;}
+#cboxLoadedContent .author{float:left;margin:4px 18px 0;font-size:26px;line-height:26px;width:50%;}
+#cboxLoadedContent .posted_at{float:left;margin:10px 18px 0;color:#a6a6a6;width:50%;}
+#cboxLoadedContent .text{clear:both;float:left;overflow:hidden;padding:0;}
+#cboxLoadedContent .reply{display:none !important;}
+#cboxLoadedContent .text p{margin-top:15px;}
+#cboxLoadedContent .text a{color:#000;text-decoration:underline;}
+#respond{float:left;width:620px;margin-bottom:20px;}
+#respond p{margin-top:20px;}
+#respond h3{font-size:26px;}
+#respond input{border:1px solid #ccc;height:28px;width:288px;padding:0 5px;}
+#respond textarea{border:1px solid #ccc;padding:5px;width:608px;height:163px;font: 14px/20px 'Segoe';}
+#respond input#submit{height:36px;width:138px;font-size:22px;color:#fff;background-color:#000;}
+#loadMorePosts {position: absolute; bottom: 3px; left: 0; background: url('images/arrow-down.png') center left no-repeat; padding-left: 40px; font-size:16px; height: 31px; line-height: 30px; color:black;}
+#loader {position: absolute; bottom: 2px; left: 0; background: url('images/loading.gif'); width: 32px; height: 32px; display: none;}
+
+.left{float:left;}
+.right{float:right;}
+
+.pretty_date{text-transform:uppercase;}
+
+#content #rlp_container{background-color: #8aa8ff;width:428px;height:414px;padding:33px 26px;}
+#content #rlp_container .text{padding-top:7px;float:left;width:200px;}
+#content #rlp_container #phone{float:right;}
+#content #rlp_container .text h2{font-size:23px;line-height:25px;color:#fff;font-weight:normal;padding:25px 0;}
+#content #rlp_container .text h3{font-size:16px;color:#fff;}
+#content #rlp_container .text h3 a{text-decoration:underline;color:#fff;}
+#content #rlp_container .text img{vertical-align:bottom;}
+
+#side{float:left;width:300px;}
+#side .nav{margin:0 0 14px 0;}
+#side .nav li {height:50px;}
+#side .nav li a{font:14px 'Segoe';text-transform:lowercase;}
+#side .nav li a img{vertical-align:middle;}
+#side .nav li a span{padding-left:13px;color:black;}
+#side .block{border-top:1px solid #ccc;overflow:auto;position:relative;}
+/* #side #about{height:639px;} */
+#side #about h3 img{float:right;margin-top:3px;}
+#side #social{height:309px;}
+#side #ads{padding-top:9px;padding-bottom:20px;}
+#side #ads img{padding-bottom:16px;}
+#side .block .icons{bottom:10px;position:absolute;}
+#side .block .icons a{background:url('images/icons-social.png');height:59px;width:60px;text-indent:-9999px;float:left;margin:20px 20px 0 0;}
+#side .block #facebook{}
+#side .block #login{}
+#side .block #twitter{background-position:-60px 0;}
+#side .block #youtube{background-position:-120px 0;}
+#side .block #posterous{background-position:0 -59px;margin-right:0;}
+#side .block #mail{background-position:-60px -59px;}
+#side .block #rss{background-position:-120px -59px;}
+#side .block h3{font:26px 'Segoe';text-transform:lowercase;margin:15px 0 0 0;}
+#side .block p{line-height:23px;margin-top:10px;color:#000;}
+#side #searchform {position: relative;}
+#side .search{border:1px solid #ccc;padding:5px;width:288px;margin:10px 0;height:20px;}
+#side #searchformsubmit {position: absolute; right: 8px; top: 34px; display: block; width: 29px; height: 24px; background:url('images/search.png') no-repeat;}
+#side #searchformsubmit:hover {cursor: pointer;}
+
+#footer{float:left;border-top:1px solid #ccc;height:50px;width:942px; padding-top:10px;}
+#footer #logo-ms{float:right;}
+#footer a {color:#333;}
+#copyright {padding-top:5px; float:right; clear:both;}
+
+.wufoo li{width:100%;}
+
+#userVoiceWidget h3 img {float:right;margin-top:3px;}
+#userVoiceWidget h3 {text-transform: none !important;}
+#userVoiceWidget .uv_num_votes {font-weight: bolder;}
+#uv_suggestion_list .uv_suggestion a {color: #8aa8ff;}
+#uv_suggestion_list .uv_suggestion .uv_comments {color:#333333;}
+#uv_box #uv_credit {display:none; height:0; width:0;}
