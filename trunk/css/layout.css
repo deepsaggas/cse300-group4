@@ -27,7 +27,8 @@ text-decoration: none;
 }
 
 a:hover {
-text-decoration: underline;
+	text-decoration: underline;
+	color: #000000;
 }
 
 
@@ -441,7 +442,7 @@ float: left;
 }
 
 .width_3_quarter {
-width: 66%;
+width: 80%;
 margin-right: 0;
 float: left;
 }
@@ -884,3 +885,24 @@ color: #32510F;
 padding: 10px 0;
 text-indent: 40px;
 font-size: 14px;}
+.co {
+	color: #000000;
+}
+#main .module.width_full .module_content #hj #3 tr td a .ts {
+	color: #000000;
+}
+.co {
+	color: #000000;
+}
+c {
+	color: #000000;
+}
+c {
+	color: #000;
+}
+com {
+	color: #000000;
+}
+cm {
+	color: #000000;
+}

@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8"/>
-	<title>Dashboard: Sofia</title>
+	<title>Notification: Equip Me</title>
 	
 	<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen" />
 	<!--[if lt IE 9]>
@@ -85,13 +85,13 @@ function compose() {
 	<header id="header">
 		<hgroup>
 			<h1 class="site_title">EQUIP ME</h1>
-			<h2 class="section_title">Dashboard</h2><div class="btn_view_site"></div>
+			<h2 class="section_title">Notifications</h2><div class="btn_view_site"></div>
 		</hgroup>
 	</header> <!-- end of header bar -->
 	
 	<section id="secondary_bar">
 		<div class="user">
-			<p>Ashish Sureka (<a href="#">3 Messages</a>)</p>
+			<p>Ashish Sureka (<a href="#">3 Notifications</a>)</p>
 			<!-- <a class="logout_user" href="#" title="Logout">Logout</a> -->
 		</div>
 		<div class="breadcrumbs_container">
@@ -109,31 +109,30 @@ function compose() {
 		<ul class="toggle">
         <li class="icn_tags"><a href="Dashboard.html">DashBoard</a></li>
 			<li class="icn_new_article"><a href="New Form.html">New Request</a></li>
-			<li class="icn_edit_article"><a href="#">Edit Request</a></li>
+			<li class="icn_edit_article"><a href="Archive.html">Request Archive</a></li>
 			<li class="icn_tags"><a href="Notifications.html">Notifications</a></li>
 		</ul>
 		<h3>Tools</h3>
 		<ul class="toggle">
-			<li class="icn_add_user"><a href="#">Request Tracker</a></li>
+			<li class="icn_add_user"><a href="Request Tracker.html">Request Tracker</a></li>
 			
 		</ul>
-		<h3>Requests</h3>
+		<h3>Requests Status</h3>
 		<ul class="toggle">
-			<li class="icn_folder"><a href="#">Approved</a></li>
+			<li class="icn_folder"><a href="Approved.html">Approved</a></li>
 			<li class="icn_photo"><a href="#">Rejected</a></li>
 			<li class="icn_audio"><a href="#">Ongoing</a></li>
 			<li class="icn_video"><a href="#">Drafts</a></li>
 		</ul>
-		<h3>Admin</h3>
+		<h3>Administration</h3>
 		<ul class="toggle">
-			<li class="icn_settings"><a href="#">Profile</a></li>
-			<li class="icn_security"><a href="#">Security</a></li>
-			<li class="icn_jump_back"><a href="#">Logout</a></li>
+			<li class="icn_settings"><a href="Profile.html">Profile</a></li>
+			<li class="icn_jump_back"><a href="Login.html">Logout</a></li>
 		</ul>
 		
 		<footer>
 			<hr />
-			<p><strong>Copyright &copy; 2012 </strong>		</p>
+			<p>&nbsp;</p>
 		</footer>
 	</aside><!-- end of sidebar -->
 	
@@ -144,27 +143,22 @@ function compose() {
 		  <table width=100% cellpadding=2 cellspacing=0 border=0
 bgcolor="#C3D9FF">
 			      <tr>
-			        <td><input type=submit name=nvp_a_arch value="Compose" onClick ="compose()">
-			          &nbsp;
+			        <td>
+                    <input type=submit name=nvp_a_tr value="New" onClick="remove()">
 			          <input type=submit name=nvp_a_tr value="Delete" onClick="remove()">
 			          &nbsp;&nbsp;
 			          <select name=tact>
 			            <option value="">More Actions...</option>
 			            <option value=rd>Mark as read</option>
 			            <option value=ur>Mark as unread</option>
-			            <option value=st>Add star</option>
-			            <option value=xst>Remove star</option>
-			            <option value=ig>Mute</option>
+			          
 			            <option value="" disabled>--------</option>
 			            <option value="" disabled>Apply Category:</option>
-			            <option value="ac_Laptop"
->Laptop </option>
-			            <option value="ac_Printer"
->Printer </option>
+			            
 			            
 		              </select>
 			          &nbsp;
-			          <input type=submit name=nvp_tbu_go value="Go">
+			          
 			          &nbsp; <a href="?&">Refresh</a></td>
 			        <td align=right><b>1</b>&nbsp;-&nbsp;<b>3</b> of <b>3</b> &nbsp;<a href="?&st=100"
 ><b>Older &#8250;</b></a>
@@ -173,14 +167,24 @@ bgcolor="#C3D9FF">
 			<div class="module_content">
 			  <form action="?&at=AF6bupOzkkqnxdhL3G9xOT17SPpBzIYscQ" name="f" method=POST id ="hj" >
 			    </tr>
+                 <table id ="4" width=100% cellpadding=2 cellspacing=10 border=0 bgcolor=#e8eef7 class=th>
+		          <tr bgcolor="#E8EEF7">
+		            <td width=1% nowrap><input type=checkbox name=t
+value="139d51b748e43783" id = "4"></td>
+		            <td width=25%> Administrator</td>
+		            <td width=73%> <span class=ts><font size=1><font color=#006633> </font></font> The Request for Dell Xps Laptop has been forwarded to Ajay Kumar <font color=#E8EEF7> </font></span></a></td>
+		            <td width=1% nowrap> 10:11&nbsp;pm
+                  
+		                <td nowrap> Sep&nbsp;20
+                </table><br>
 		        <table id ="4" width=100% cellpadding=2 cellspacing=10 border=0 bgcolor=#e8eef7 class=th>
 		          <tr bgcolor="#E8EEF7">
 		            <td width=1% nowrap><input type=checkbox name=t
 value="139d51b748e43783" id = "4"></td>
-		            <td width=25%> Ajay </td>
-		            <td width=73%><a href="?&v=c&th=139d51b748e43783"> <span class=ts><font size=1><font color=#006633> </font></font> The item you specifed is not in the market .Reconsider or wait 7 days. <font color=#E8EEF7> </font></span></a></td>
+		            <td width=25%> Ajay Kumar</td>
+		            <td width=73%> <span class=ts><font size=1><font color=#006633> </font></font> The item you specifed is not in the market .Reconsider or wait 7 days. <font color=#E8EEF7> </font></span></a></td>
 		            <td width=1% nowrap> 10:11&nbsp;pm
-                  <tr bgcolor="#E8EEF7">
+                  
 		                <td nowrap> Sep&nbsp;14
                 </table>
                 
@@ -191,10 +195,10 @@ value="139d51b748e43783" id = "4"></td>
 		          <tr bgcolor="#E8EEF7">
 		            <td width=1% nowrap><input type=checkbox name=t
 value="139d51b748e43783" id = "2"></td>
-		            <td width=25%> Amit </td>
-		            <td width=73%><a href="?&v=c&th=139d51b748e43783"> <span class=ts><font size=1><font color=#006633> </font></font> Your available funds have been modifed  <font color=#7777CC> </font></span></a></td>
+		            <td width=25%> Ajay Kumar</td>
+		            <td width=73%> <span class=ts><font size=1><font color=#006633> </font></font>The HP desk printer you specifed is not in the market .Reconsider or wait 7 days. <font color=#E8EEF7></font></span></a></td>
 		            <td width=1% nowrap> 05:45&nbsp;am
-                  <tr bgcolor="#E8EEF7">
+                 
 		                <td nowrap> Sep&nbsp;12
                 </table>
                 <br>
@@ -203,11 +207,11 @@ value="139d51b748e43783" id = "2"></td>
 		          <tr bgcolor="#E8EEF7">
 		            <td width=1% nowrap><input type=checkbox name=t
 value="139d51b748e43783" id="3"></td>
-		            <td width=25%> Ajay </td>
-		            <td width=73%><a href="?&v=c&th=139d51b748e43783"> <span class=ts><font size=1><font color=#006633> </font></font> Repurchase of item   <font color=#7777CC> </font></span></a></td>
+		            <td width=25%> Ajay Kumar</td>
+		            <td width=73%> <span class=ts><font size=1><font color=#006633> </font></font>Your available funds have been modifed <font color=#7777CC> </font><font color=#7777CC> </font></span></a></td>
 		            <td width=1% nowrap> 6:15 pm
-                  <tr bgcolor="#E8EEF7">
-		                <td nowrap> Sep&nbsp;7
+                 
+	                <td nowrap> Sep&nbsp;7
                 </table>
 			  </form>
 			  <div class="clear"></div>
