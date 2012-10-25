@@ -906,3 +906,11 @@ com {
 cm {
 	color: #000000;
 }
+
+.banner{position:absolute; z-index:1; height:230px; width:720px; top:0px; background:#FFF; border:solid 1px #CCC}
+.banner h1{position: absolute; bottom:20px; right:20px; font-style:italic; color:#444; float:right; width:50%; font-size:40px; text-align:right; line-height:100%;}
+#banner1{background:#F90}
+#banner2{background-image:url(banner2.jpg);}
+#banner3{background:#F90}
+#banner4{background:#FFC}
+#banner5{background:#99CCFF}

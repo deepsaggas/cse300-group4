@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8"/>
-	<title>Dashboard: Equip Me</title>
+	<title>Approved: Equip Me</title>
 	
 	<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen" />
 	<!--[if lt IE 9]>
@@ -97,7 +97,7 @@ function compose() {
 	<header id="header">
 		<hgroup>
 			<h1 class="site_title">EQUIP ME</h1>
-			<h2 class="section_title">Request Status</h2><div class="btn_view_site"></div>
+			<h2 class="section_title">Approved</h2><div class="btn_view_site"></div>
 		</hgroup>
 	</header> <!-- end of header bar -->
 	
@@ -112,42 +112,38 @@ function compose() {
 			  <a class="current">Approved</a></article>
 		</div>
 	</section><!-- end of secondary bar -->
-	
-	<aside id="sidebar" class="column">
-		<form class="quick_search">
-			<input type="text" value="Quick Search" onFocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
-		</form>
-		<hr/>
-		<h3>Content</h3>
-		<ul class="toggle">
-        <li class="icn_tags"><a href="Dashboard.html">DashBoard</a></li>
-			<li class="icn_new_article"><a href="New Form.html">New Request</a></li>
-			<li class="icn_edit_article"><a href="Request Tracker.html">Request Archive</a></li>
-			<li class="icn_tags"><a href="Notifications.html">Notifications</a></li>
-		</ul>
-		<h3>Tools</h3>
-		<ul class="toggle">
-			<li class="icn_add_user"><a href="#">Request Tracker</a></li>
-			
-		</ul>
-		<h3>Requests</h3>
-		<ul class="toggle">
-			<li class="icn_folder"><a href="#">Approved</a></li>
-			<li class="icn_photo"><a href="#">Rejected</a></li>
-			<li class="icn_audio"><a href="#">Ongoing</a></li>
-			<li class="icn_video"><a href="#">Drafts</a></li>
-		</ul>
-		<h3>Admin</h3>
-		<ul class="toggle">
-			<li class="icn_settings"><a href="Profile.html">Profile</a></li>
-			<li class="icn_jump_back"><a href="Login.html">Logout</a></li>
-		</ul>
-		
-		<footer>
-			<hr />
-			<p>&nbsp;</p>
-		</footer>
-	</aside><!-- end of sidebar -->
+<aside id="sidebar" class="column">
+	  <form class="quick_search">
+	    <input type="text" value="Quick Search" onFocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
+      </form>
+	  <hr/>
+	  <h3>Navigator</h3>
+	  <ul class="toggle">
+	    <li class="icn_tags"><a href="Dashboard.html">DashBoard</a></li>
+	    <li class="icn_tags"><a href="Notifications.html">Notifications</a></li>
+	    <li class="icn_add_user"><a href="Request Tracker.html">Request Tracker</a></li>
+	    <li class="icn_edit_article"><a href="Purchase History.html" >Purchase History</a></li>
+      </ul>
+	  <h3>Request Menu</h3>
+	  <ul class="toggle">
+	    <li class="icn_new_article">
+	      <!--<a id="overlay" href="equip_purchase.htm">New Request</a>-->
+	      <a class="lightbox-22643568634460" style="cursor:pointer;color:#666;">New Request</a></li>
+	    <li class="icn_folder"><a href="Approved.html">Approved</a></li>
+	    <li class="icn_photo"><a href="Rejected.html">Rejected</a></li>
+	    <li class="icn_audio"><a href="Ongoing.html">OnGoing</a></li>
+	    <li class="icn_photo"><a href="Pending.html" >Pending</a></li>
+      </ul>
+	  <h3>AdminISTRATION</h3>
+	  <ul class="toggle">
+	    <li class="icn_settings"><a href="Profile.html">Profile</a></li>
+	    <li class="icn_jump_back"><a href="Login.html">Logout</a></li>
+      </ul>
+	  <footer>
+	    <hr />
+      </footer>
+</aside>
+	<!-- end of sidebar -->
 	
 	<section id="main" class="column">
 	  <h4 class="alert_info">Approved Requests</h4>
