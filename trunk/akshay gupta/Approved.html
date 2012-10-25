@@ -151,73 +151,57 @@ function compose() {
 	
 	<section id="main" class="column">
 	  <h4 class="alert_info">Approved Requests</h4>
-		
-		<article class="module width_full">
-		  <table width=100% cellpadding=2 cellspacing=0 border=0
-bgcolor="#C3D9FF">
-			      <tr>
-			        <td><input type=submit name=nvp_a_tr value="Delete" onClick="remove()">
-			          &nbsp;&nbsp;
-			          <select name=tact>
-			            <option value="">More Actions...</option>
-			            <option value=rd>Mark as read</option>
-			            <option value=ur>Mark as unread</option>
-			          
-			            <option value="" disabled>--------</option>
-			            <option value="" disabled>Apply Category:</option>
-			            
-			            
-		              </select>
-			          &nbsp;&nbsp; <a href="?&">Refresh</a></td>
-			        <td align=right><b>1</b>&nbsp;-&nbsp;<b>3</b> of <b>3</b> &nbsp;<a href="?&st=100"
-><b>Older &#8250;</b></a>
-                </table>
-                
-			<div class="module_content">
-			  <form action="?&at=AF6bupOzkkqnxdhL3G9xOT17SPpBzIYscQ" name="f" method=POST id ="hj" >
-			    </tr>
-		        <table id ="4" width=100% cellpadding=2 cellspacing=10 border=0 bgcolor=#e8eef7 class=th>
-		          <tr bgcolor="#E8EEF7">
-		            <td width=1% nowrap><input type=checkbox name=t
-value="139d51b748e43783" id = "4"></td>
-		           
-		            <td width=73%><a class="lightbox-22643568634460" style="cursor:pointer;color:#666;"> <span class=ts><font size=1><font color=#006633> </font></font> Dell XPS Laptop, i7 Third Gen Intel Processor</span></a></td>
-		            <td width=1% nowrap> 12:11&nbsp;pm
-                  
-		                <td nowrap> Sep&nbsp;21
-                </table>
-                
-                
-                
-                <br>
-                <table id = "2" width=100% cellpadding=2 cellspacing=10 border=0 bgcolor=#e8eef7 class=th>
-		          <tr bgcolor="#E8EEF7">
-		            <td width=1% nowrap><input type=checkbox name=t
-value="139d51b748e43783" id = "2"></td>
-		           
-		            <td width=73%><a class="lightbox-22643568634460" style="cursor:pointer;color:#666;"> <span class=ts><font size=1><font color=#006633> </font></font>HP LaserJet Printer <font color=#7777CC> </font></span></a></td>
-		            <td width=1% nowrap> 05:45&nbsp;am
-                 
-		                <td nowrap> Sep&nbsp;12
-                </table>
-                <br>
-                
-                <table width=100% cellpadding=2 cellspacing=10 border=0 bgcolor=#e8eef7 class=th id="3">
-		          <tr bgcolor="#E8EEF7">
-		            <td width=1% nowrap><input type=checkbox name=t
-value="139d51b748e43783" id="3"></td>
-		           
-		            <td width=73%><a class="lightbox-22643568634460" style="cursor:pointer;color:#666;">  <span class=ts><font size=1><font color=#006633> </font></font> HP Pavillion DV6 <font color=#7777CC> </font></span></a></td>
-		            <td width=1% nowrap> 6:15 pm
-                 
-		                <td nowrap> Sep&nbsp;7
-                </table>
-			  </form>
-			  <div class="clear"></div>
-		  </div>
-          
-          
-		</article><!-- end of stats article --><!-- end of content manager article --><!-- end of messages article -->
+	  <article class="module width_3_quarter">
+	    <header>
+	      <ul class="tabs">
+	        <li><a href="#tab1">New</a></li>
+	        <li><a href="#tab2"> Delete</a></li>
+          </ul>
+        </header>
+	    <div class="tab_container">
+	      <div id="tab1" class="tab_content">
+	        <table class="tablesorter" cellspacing="0">
+	          <thead>
+	            <tr>
+	              <th></th>
+	              <th>Entry Name</th>
+	              
+	              <th>Sent On</th>
+	              <th>Actions</th>
+                </tr>
+              </thead>
+	          <tbody>
+	            <tr>
+	              <td><input type="checkbox"></td>
+	              <td>Dell XPS Laptop, i7 Third Gen Intel Processor</td>
+	              
+	              <td>12:11 PM, Sep 21</td>
+	              <td><input type="image" src="images/icn_jump_back.png" title="Reply"></td>
+                </tr>
+	            <tr>
+	              <td><input type="checkbox"></td>
+	              <td>HP LaserJet Printer</td>
+	              
+	              <td>05:45 AM, Sep 12</td>
+	              <td><input type="image" src="images/icn_jump_back.png" title="Reply"></td>
+                </tr>
+	            <tr>
+	              <td><input type="checkbox"></td>
+	              <td>The HP desk printer you specifed is not in the market .Reconsider or wait 7 days.</td>
+	              
+	              <td>6:15 PM, 7 Sep</td>
+	              <td><input type="image" src="images/icn_jump_back.png" title="Reply"></td>
+                </tr>
+	            
+              </tbody>
+            </table>
+          </div>
+	      <!-- end of #tab1 -->
+	      <!-- end of #tab2 -->
+        </div>
+	    <!-- end of .tab_container -->
+      </article>
+	  <!-- end of stats article --><!-- end of content manager article --><!-- end of messages article -->
 		
 	  <div class="clear"></div><!-- end of post new article --><!-- end of styles article -->
 	  <div class="spacer"></div>
