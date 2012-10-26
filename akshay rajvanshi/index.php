@@ -10,11 +10,11 @@
  mysql_select_db("equipme") or die(mysql_error()); 
  $data = mysql_query("set @var=0,@adminno=0")
  or die(mysql_error()); 
- $data = mysql_query("select @var:=F_id from mainview2 INNERJOIN admin_form_fills on mainnview2.form_id=admin_form_fills.form_id AND F_name='facultyname'")
- or die(mysql_error()); 
- $data = mysql_query("SELECT @adminno:=a_id from mainview2 where form_id=@var")
+  // $data = mysql_query("select @var:=F_id from mainview2 INNERJOIN admin_form_fills on mainnview2.form_id=admin_form_fills.form_id AND F_name='facultyname'")
+  //or die(mysql_error()); 
+ $data = mysql_query("SELECT @adminno:=a_id from mainview2 where form_id=formno")
  or die(mysql_error());
- $data = mysql_query("UPDATE admin_form_with SET A_status='Approved' where form_id=@var")
+ $data = mysql_query("UPDATE admin_form_with SET A_status='Approved' where form_id=formno")
  or die(mysql_error());
  $timezone = "Asia/Calcutta";
  date_default_timezone_set($timezone);
