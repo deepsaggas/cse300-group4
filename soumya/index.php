@@ -31,7 +31,6 @@ $oauth2 = new Google_Oauth2Service($client);
 if (isset($_GET['code'])) {
   $client->authenticate($_GET['code']);
   $_SESSION['token'] = $client->getAccessToken();
-  echo $_SESSION['token'];
   $redirect = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
   header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
   return;
@@ -52,9 +51,10 @@ if ($client->getAccessToken()) {
   // These fields are currently filtered through the PHP sanitize filters.
   // See http://www.php.net/manual/en/filter.filters.sanitize.php
   $email = filter_var($user['email'], FILTER_SANITIZE_EMAIL);
-  $img = filter_var($user['picture'], FILTER_VALIDATE_URL);
+  //$img = filter_var($user['picture'], FILTER_VALIDATE_URL);
   $name = $user['name'];
-  $personMarkup = "$email<div><img src='$img?sz=500'></div>$name<br/>";
+  //$personMarkup = "$email<div><img src='$img?sz=500'></div>$name<br/>";
+  $personMarkup = "$email<br/>$name<br/>";
 
   // The access token may have been updated lazily.
   $_SESSION['token'] = $client->getAccessToken();
@@ -66,218 +66,262 @@ if ($client->getAccessToken()) {
 <html>
 <head>
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-		<title>Equip Me</title>
-		<meta name="viewport" content="user-scalable=false" />
-		<meta name="viewport" content = "width = device-width, initial-scale = 0.70, minimum-scale = 0.70, maximum-scale = 0.70" />
-    <link rel="stylesheet" href="themes/newblack/style.css" />
-    <link rel="stylesheet" href="http://www.mykindofphone.com/wp-content/themes/newblack/colorbox.css" />
-    <link rel="stylesheet" href="css/zocial.css"/>
-    <link rel="stylesheet" type="text/css" href="http://www.mykindofphone.com/wp-content/themes/newblack/dd.css" />
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-    <script src="http://www.mykindofphone.com/wp-content/themes/newblack/js/jquery.dd.js" type="text/javascript"></script>
-    <script src="http://www.mykindofphone.com/wp-content/themes/newblack/js/jquery.colorbox-min.js"></script>
-    <script type="text/javascript" src="//windowsphone.ugc.bazaarvoice.com/static/7088-en_gb/bvapi.js"></script>
-    <script type="text/javascript">
-      $BV.configure("global", {
-      submissionContainerUrl: "http://www.mykindofphone.com/submit-a-review"
-      });
-    </script>
 
-    <script type="text/javascript">
-var loadingPosts = false;
-var replacingPosts;
+<!--Dashboard.php head-->
 
-$('document').ready(function(){
+<title>Dashboard: Equip ME</title>
+	
+	<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen" />
+	<!--[if lt IE 9]>
+	<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" />
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+	<script src="js/hideshow.js" type="text/javascript"></script>
+	<script src="js/jquery.tablesorter.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/jquery.equalHeight.js"></script>
+    <script src="http://max.jotfor.ms/min/g=feedback2" type="text/javascript">
+	new JotformFeedback({
+	formId:'22643568634460',
+	base:'http://jotform.me/',
+	windowTitle:'Equipment Purchase',
+	background:'#FFA500',
+	fontColor:'#FFFFFF',
+	type:1,
+	height:550,
+	width:800
+	});
+	</script>
+	<script type="text/javascript">
+	$(document).ready(function() 
+    	{ 
+      	  $(".tablesorter").tablesorter(); 
+   	 } 
+	);
+	$(document).ready(function() {
 
-  $('#loadMorePosts').click(function(e) {
-    if (!loadingPosts)
-    {
-      loadingPosts = true;
-      $(this).html('Loading...');
-      $('#loader').fadeIn('fast');
-      replacingPosts = $('.morePosts').length > 1 ? true : false;
-      query = $(this).attr('rel') ? $(this).attr('rel') : null;
+	//When page loads...
+	$(".tab_content").hide(); //Hide all content
+	$("ul.tabs li:first").addClass("active").show(); //Activate first tab
+	$(".tab_content:first").show(); //Show first tab content
 
-      if (replacingPosts)
-      {
-        $('#content').css('height', $('#content').height() + 'px');
-        $('.morePosts:last').fadeOut('slow', function(){
-          $(this).remove();
-          getMorePosts(query);
-        });
-      }
-      else
-      {
-        getMorePosts(query);
-      }
-    }
-    e.preventDefault();
-  });
+	//On Click Event
+	$("ul.tabs li").click(function() {
+
+		$("ul.tabs li").removeClass("active"); //Remove any "active" class
+		$(this).addClass("active"); //Add "active" class to selected tab
+		$(".tab_content").hide(); //Hide all tab content
+
+		var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+		$(activeTab).fadeIn(); //Fade in the active ID content
+		return false;
+	});
+
 });
-
-function getMorePosts(query)
-{
-  $.ajax({
-    url: 'http://www.mykindofphone.com/ajax-post-loader',
-    data: 'start='+parseInt($('#morePostsStart').html())+(query ? '&'+query : ''),
-    success: function(data) {
-      if (!replacingPosts)
-      {
-        $('#content').animate({
-          height: $('#content').height() + 640 + 'px'
-        }, 300, function() {
-          insertPosts(data);
-        });
-      }
-      else
-      {
-        insertPosts(data);
-      }
-      $('#loader').fadeOut('fast');
-      $('#loadMorePosts').html('Load More Posts');
-    }
-  });
-}
-
-function insertPosts(data)
-{
-  $(data).hide().insertBefore('#morePostsStart').fadeIn('slow', function() {
-    $('#content').css('height', 'auto');
-    $('#morePostsStart').html(parseInt($('#morePostsStart').html()) + $(data).children().length);
-    attachAnimations('#'+$(data).attr('id')+' .blockpost');
-    loadingPosts = false;
-  });
-}
-</script>    <script type="text/javascript">
-      $('document').ready(function(){
-        $('.block').live({
-          'mouseenter': function(){
-            var top = ($(this).hasClass('rlp')) ? '275' : '170';
-            $(this).addClass('viewing').children('.wrap').stop().animate({'top':top}, 300);
-          },
-          'mouseleave': function(){
-            var top = ($(this).hasClass('rlp')) ? '66' : '0';
-            $(this).removeClass('viewing').children('.wrap').stop().animate({'top':top}, 300);
-          }
-        });
-
-        $('.pretty_date').each(function(index, element){
-          $(element).html(prettyDate($(element).html()));
-        });
-
-        attachAnimations('.blockpost');
-      });
-
-      function attachAnimations(selector)
-      {
-        $(selector).each(function(i) {
-          setOffAnimation($(this), i);
-        });
-      }
-
-      function setOffAnimation(block, count)
-      {
-        setTimeout(function() {
-          setInterval(function() {
-            if (block.hasClass('viewing')) return;
-            var top = ($(block).hasClass('rlp')) ? '275' : '170';
-            $(block).children('.wrap').stop().animate({'top':top}, 1000);
-            setTimeout(function() {
-              if (block.hasClass('viewing')) return;
-              var top = ($(block).hasClass('rlp')) ? '66' : '0';
-              $(block).children('.wrap').stop().animate({'top':top}, 1000);
-            }, 5000);
-          }, 15000);
-        }, 5000*(count%4));
-      }
-
-      function prettyDate(date_str){
-        var time_formats = [
-          [120, 'a minute ago', 'a minute from now'],
-          [3600, 'minutes', 60],
-          [7200, 'an hour ago', 'an hour from now'],
-          [86400, 'hours', 3600],
-          [172800, 'a day ago', 'a day from now'],
-          [604800, 'days', 86400],
-          [1209600, 'a week ago', 'a week from now'],
-          [2419200, 'weeks', 604800],
-          [4838400, 'a month ago', 'a month from now'],
-          [29030400, 'months', 2419200],
-          [58060800, 'a year ago', 'a year from now'],
-          [2903040000, 'years', 29030400]
-        ];
-
-        var seconds = (new Date - new Date(date_str)) / 1000;
-        var token = 'ago', list_choice = 1;
-        if (seconds < 0) {
-          seconds = Math.abs(seconds);
-          token = 'from now';
-          list_choice = 2;
-        }
-        var i = 0, format;
-        while (format = time_formats[i++]){
-          if (seconds < format[0]) {
-            if (typeof format[2] == 'string'){
-              return format[list_choice];
-            }
-            else{
-              return Math.floor(seconds / format[2]) + ' ' + format[1] + ' ' + token;
-            }
-          }
-        }
-      }
-
     </script>
     <script type="text/javascript">
-      window.___gcfg = {lang: 'en-GB'};
-
-      (function() {
-        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-        po.src = 'https://apis.google.com/js/plusone.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-      })();
-    </script>
-
-<!--    <link rel='stylesheet' id='myStyleSheets-css'  href='http://www.mykindofphone.com/wp-content/plugins/uservoice-idea-list-widget/uv_styles.css?ver=3.3.2' type='text/css' media='all' />-->
-<script type='text/javascript'>
-/* <![CDATA[ */
-var SHRSB_Globals = {"src":"http:\/\/www.mykindofphone.com\/wp-content\/uploads\/shareaholic\/spritegen","perfoption":"1","twitter_template":"%24%7Btitle%7D+-+%24%7Bshort_link%7D+via+%40Shareaholic","locale":"0","shortener":"tinyurl","shortener_key":"","pubGaSocial":"0","pubGaKey":""};
-/* ]]> */
+    $(function(){
+        $('.column').equalHeight();
+    });
 </script>
-<script type='text/javascript' src='http://www.mykindofphone.com/wp-content/uploads/shareaholic/spritegen/jquery.shareaholic-publishers-sb.min.js?ver=5.0.0.4'></script>
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.mykindofphone.com/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.mykindofphone.com/wp-includes/wlwmanifest.xml" /> 
-<meta name="generator" content="WordPress 3.3.2" />
-
-<!-- platinum seo pack 1.3.7 -->
-<meta name="robots" content="index,follow,noodp,noydir" />
-<meta name="description" content="Welcome to the official blog of Windows Phone UK. Find all the information on latest news, apps, games & technology right here along with customer reviews." />
-<meta name="keywords" content="apps,education" />
-<link rel="canonical" href="http://www.mykindofphone.com/" />
-<!-- /platinum one seo pack -->
-
-
-<!-- Start SHR Open Graph Tags -->
-
-	<!-- Shareaholic Notice: There is no featured image set -->
-
-<!-- END SHR Open Graph Tags -->
-
-<link type="text/css" rel="stylesheet" href="http://www.mykindofphone.com/wp-content/plugins/simple-pull-quote/css/simple-pull-quote.css" />
 
 </head>
 <body>
-<header><h1>Equip Me... Coming Soon</h1></header>
-<?php if(isset($personMarkup)): ?>
-<?php print $personMarkup ?>
-<?php endif ?>
+<!--<header><h1>Equip Me... Coming Soon</h1></header>-->
+<?php //if(isset($personMarkup)): ?>
+<?php //print $personMarkup ?>
+<?php //endif ?>
 <?php
   if(isset($authUrl)) {
     //print "<a class='login' href='$authUrl'>Connect Me!</a>";
 	//print "<a class='login' href='https://accounts.google.com/o/oauth2/auth?response_type=code&redirect_uri=http%3A%2F%2Fequipme.com%2Fexamples%2Fuserinfo%2Findex.php&client_id=733055834812.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.google.com%2Fcalendar%2Ffeeds%2F&access_type=offline&approval_prompt=force'>Connect Me!</a>";
 	header('Location: http://equipme.com/index.html');
   } else {
-   print "<a class='logout' href='?logout'>Logout</a>";
-  }
+   //print "<a class='logout' href='?logout'>Logout</a>";
+   //header('Location: http://equipme.com/Dashboard.php?session='.$_SESSION['token']); ?>
+
+  <!--Dashboard.php--> 
+  <header id="header">
+		<hgroup>
+			<h1 class="site_title">FACULTY</h1>
+			<h2 class="section_title">Dashboard</h2><div class="btn_view_site"></div>
+		</hgroup>
+	</header> <!-- end of header bar -->
+	
+	<section id="secondary_bar">
+		<div class="user">
+			<p><?php echo $name?> (<a href="#">3 Notifications</a>)</p>
+			<!-- <a class="logout_user" href="#" title="Logout">Logout</a> -->
+		</div>
+		<div class="breadcrumbs_container">
+			<article class="breadcrumbs"><a href="index.html">Faculty</a> 
+			  <div class="breadcrumb_divider"></div> <a class="current">Dashboard</a></article>
+		</div>
+	</section><!-- end of secondary bar -->
+	
+	<aside id="sidebar" class="column">
+		<form class="quick_search">
+			<input type="text" value="Quick Search" onFocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
+		</form>
+		<hr/>
+		<h3>Content</h3>
+		<ul class="toggle">
+        <li class="icn_tags"><a href="Dashboard.html">DashBoard</a></li>
+			<li class="icn_new_article"><!--<a id="overlay" href="equip_purchase.htm">New Request</a>--><a class="lightbox-22643568634460" style="cursor:pointer;color:#666;">New Request</a></li>
+			<li class="icn_edit_article"><a href="Archive.html">Request Archive</a></li>
+			
+			<li class="icn_tags"><a href="Notifications.html">Notifications</a></li>
+		</ul>
+		<h3>Tools</h3>
+		<ul class="toggle">
+			<li class="icn_add_user"><a href="Request Tracker.html">Request Tracker</a></li>
+			
+		</ul>
+		<h3>Request status</h3>
+		<ul class="toggle">
+			<li class="icn_folder"><a href="Approved.html">Approved</a></li>
+			<li class="icn_photo"><a href="#">Rejected</a></li>
+			<li class="icn_audio"><a href="#">OnGoing</a></li>
+			<li class="icn_video"><a href="#">Drafts</a></li>
+		</ul>
+		<h3>AdminISTRATION</h3>
+		<ul class="toggle">
+			<li class="icn_settings"><a href="Profile.html">Profile</a></li>
+			<li class="icn_jump_back"><a href="/index.php?logout">Logout</a></li>
+		</ul>
+		
+		<footer>
+			<hr />
+		</footer>
+	</aside><!-- end of sidebar -->
+	
+	<section id="main" class="column">
+	  <h4 class="alert_info">Welcome to Equip-Me</h4>
+		
+		<article class="module width_full">
+			<header>
+		  <h3>Request Tracker</h3></header>
+			<div class="module_content">
+				
+			    <iframe src="http://www.google.com/calendar/embed?src=iiitd.ac.in_kqg028ahavmmem7ol6sqi4jgkc%40group.calendar.google.com&ctz=Asia/Calcutta" style="border: 0" width="700" height="240" frameborder="0" scrolling="no"></iframe>
+				
+				<div class="clear"></div>
+			</div>
+		</article><!-- end of stats article -->
+		
+		<article class="module width_3_quarter">
+		<header>
+		<h3 class="tabs_involved">Request Manager</h3>
+		<ul class="tabs">
+   			<li><a href="#tab1">Status</a></li>
+    		<li><a href="#tab2">  Date</a></li>
+		</ul>
+		</header>
+
+		<div class="tab_container">
+			<div id="tab1" class="tab_content">
+			<table class="tablesorter" cellspacing="0"> 
+			<thead> 
+				<tr> 
+   					<th></th> 
+    				<th>Entry Name</th> 
+    				<th></th> 
+    				<th>Created On</th> 
+    				<th>Actions</th> 
+				</tr> 
+			</thead> 
+			<tbody> 
+				<tr> 
+   					<td><input type="checkbox"></td> 
+    				<td>Seagate 500 Gb Hard Disk</td> 
+    				<td>Approved</td> 
+    				<td>7th April 2012</td> 
+    				<td><input type="image" src="images/icn_edit.png" title="Edit"><input type="image" src="images/icn_trash.png" title="Trash"></td> 
+				</tr> 
+				
+				<tr> 
+   					<td><input type="checkbox"></td> 
+    				<td>HP Mini Series , 1 GB Ram, 1.7 GHz Atom Processor</td> 
+    				<td>Rejected</td> 
+    				<td>9th April 2012</td> 
+    				<td><input type="image" src="images/icn_edit.png" title="Edit"><input type="image" src="images/icn_trash.png" title="Trash"></td> 
+				</tr> 
+				<tr> 
+   					<td><input type="checkbox"></td> 
+    				<td>HP Laser Desk Printer</td> 
+    				<td>OnGoing</td> 
+    				<td>16th April 2012</td> 
+   				 	<td><input type="image" src="images/icn_edit.png" title="Edit"><input type="image" src="images/icn_trash.png" title="Trash"></td> 
+				</tr>
+                 <tr> 
+   					<td><input type="checkbox"></td> 
+    				<td>Sony Mini Series Laptop</td> 
+    				<td>Pending</td> 
+    				<td>17th April 2012</td> 
+   				 	<td><a href="Ongoing - Director.html"><input type="image" src="images/icn_alert_success.png" title="Approve"></a><input type="image" src="images/icn_alert_error.png" title="Reject"></td> 
+				</tr>
+				
+			</tbody> 
+			</table>
+			</div><!-- end of #tab1 -->
+			
+			<div id="tab2" class="tab_content">
+			<table class="tablesorter" cellspacing="0"> 
+			<thead> 
+				<tr> 
+   					<th></th> 
+    				<th>Entry Name</th> 
+    				<th>Category</th> 
+    				<th> Created On</th> 
+    				<th>Actions</th> 
+				</tr> 
+			</thead> 
+			<tbody> 
+				<tr> 
+   					<td><input type="checkbox"></td> 
+    				<td>HP Laser Desk Printer</td> 
+    				<td>OnGoing</td> 
+    				<td>16th April 2012</td> 
+    				<td><input type="image" src="images/icn_edit.png" title="Edit"><input type="image" src="images/icn_trash.png" title="Trash"></td> 
+				</tr> 
+				
+				<tr> 
+   					<td><input type="checkbox"></td> 
+    				<td>Seagate 500 Gb Hard Disk</td> 
+    				<td>Approved</td> 
+    				<td>7th April 2011</td> 
+    				<td><input type="image" src="images/icn_edit.png" title="Edit"><input type="image" src="images/icn_trash.png" title="Trash"></td> 
+				</tr> 
+				<tr> 
+   					<td><input type="checkbox"></td> 
+    				<td>Dell XPS, 2GB Ram, i7 3rd Generation</td> 
+    				<td>Approved</td> 
+    				<td>6th April 2011</td> 
+   				 	<td><input type="image" src="images/icn_edit.png" title="Edit"><input type="image" src="images/icn_trash.png" title="Trash"></td> 
+				</tr> 
+				 <tr> 
+   					<td><input type="checkbox"></td> 
+    				<td>Sony Mini Series Laptop/td> 
+    				<td>Pending</td> 
+    				<td>17th April 2012</td> 
+   				 	<td><a href="Ongoing - Director.html"><input type="image" src="images/icn_alert_success.png" title="Approve"></a><input type="image" src="images/icn_alert_error.png" title="Reject"></td> 
+				</tr>
+			</tbody> 
+			</table>
+
+			</div><!-- end of #tab2 -->
+			
+		</div><!-- end of .tab_container -->
+        
+		
+		</article><!-- end of content manager article --><!-- end of messages article -->
+		
+	  <div class="clear"></div><!-- end of post new article --><!-- end of styles article -->
+	  <div class="spacer"></div>
+	</section>
+  
+  <?php }
 ?>
+
+
 </body></html>
