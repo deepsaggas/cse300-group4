@@ -40,6 +40,11 @@ if (isset($_SESSION['token'])) {
  $client->setAccessToken($_SESSION['token']);
 }
 
+if ($client->getAccessToken()) {
+  $calList = $cal->calendarList->listCalendarList();
+  print "<h1>Calendar List</h1><pre>" . print_r($calList, true) . "</pre>";
+}
+
 if (isset($_REQUEST['logout'])) {
   unset($_SESSION['token']);
   $client->revokeToken();
@@ -141,7 +146,7 @@ if ($client->getAccessToken()) {
   if(isset($authUrl)) {
     //print "<a class='login' href='$authUrl'>Connect Me!</a>";
 	//print "<a class='login' href='https://accounts.google.com/o/oauth2/auth?response_type=code&redirect_uri=http%3A%2F%2Fequipme.com%2Fexamples%2Fuserinfo%2Findex.php&client_id=733055834812.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.google.com%2Fcalendar%2Ffeeds%2F&access_type=offline&approval_prompt=force'>Connect Me!</a>";
-	header('Location: http://equipme.com/index.html');
+	header('Location: dashboard.html');
   } else { 
   
   //checking admin or faculty

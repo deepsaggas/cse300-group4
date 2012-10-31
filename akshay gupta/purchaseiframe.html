@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head profile="http://gmpg.org/xfn/11">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Purchase History</title>
+	
+	<meta name="robots" content="INDEX, FOLLOW"/>
+    <meta name="author" content="Erik Kallevig"/>
+	
+	<meta name="keywords" content="jShowOff, jQuery, content rotator, feature rotator, free, plugin, fade, slide, slider, play, pause, captions, erik, kallevig, erik kallevig" />
+	<meta name="description" content="jShowOff is a jQuery plugin for creating a rotating content module, often used to promote pages, sections, or features on a site." />
+	
+	<link rel="stylesheet" href="js/jshowoff.css" type="text/css" media="screen, projection" />
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script> 
+	<script type="text/javascript" src="js/jquery.jshowoff.min.js"></script>
+
+</head>
+
+
+<body id="home">
+
+<!--
+
+<p>Title:		jShowOff: a jQuery Content Rotator Plugin</p>
+<p>Author:		Erik Kallevig</p>
+<p>Version:		0.1.2</p>
+<p>Website:		http://ekallevig.com/jshowoff</p>
+<p>Licene:	 	Dual licensed under the MIT and GPL licenses.</p>
+
+-->
+
+    <script type="text/javascript">		
+				$(document).ready(function(){ $('#features').jshowoff(); });
+			</script>
+    <div id="slidingFeatures">
+       <div title="Laptop"><img src="images/laptops.jpg" alt="Eddie" class="eddie" />
+        <h2>Laptops</h2>
+        <p>Order Laptops with Equip Me</p>
+        <p>With Equip Me you can order laptop from funds of your choice with just a button click.</p>
+        <p>You can browse for some of laptop designs here.</p>
+        <p><a href="http://www.dell.com">Browse &#8250;</a></p>
+      </div>
+      
+      <div title="Mobile"><img src="images/mobile.jpg" alt="Eddie" class="eddie" />
+        <h2>Mobiles</h2>
+        <p>Order Mobile Devices with Equip Me.</p>
+        <p>With Equip Me you can order mobiles from funds of your choice with just a button click.</p>
+        <p>You can browse for some of mobile and their accessories here.</p>
+        <p><a href="http://www.flipkart.com/phones?_pop=mheader">Browse &#8250;</a></p>
+      </div>
+      <div title="Server"><img src="images/server.jpg" alt="Eddie" class="eddie" />
+        <h2>Server</h2>
+        <p>Order Server with Equip Me.</p>
+        <p>With Equip Me you can order server from funds of your choice with just a button click.</p>
+        <p>You can browse for some of servers here.</p>
+        <p><a href="http://www.dell.com/in/business/p/servers">Browse &#8250;</a></p>
+      </div>
+       <div title="Others"><img src="images/others.jpg" alt="Eddie" class="eddie" />
+         <h2>Other</h2>
+        <p>For a complete list of categories see our form</p>
+       
+      </div>
+    </div>
+    <script type="text/javascript">		
+				$(document).ready(function(){ $('#slidingFeatures').jshowoff({
+					effect: 'slideLeft',
+					
+					hoverPause: false
+				}); });
+			</script><script type="text/javascript">		
+				$(document).ready(function(){ $('#basicFeatures').jshowoff({ 
+					links: false,
+					controls: false,
+					effect: 'none',
+					cssClass: 'basicFeatures',
+					hoverPause: false 
+				}); });
+			</script>
+   
+    <script type="text/javascript">		
+				$(document).ready(function(){ $('#thumbFeatures').jshowoff({ 
+					cssClass: 'thumbFeatures',
+					effect: 'slideLeft'
+				}); });
+			</script>
+ 
+
+<script type="text/javascript">
+// fix pre overflow in IE
+(function ($) {
+	$.fn.fixOverflow = function () {
+		if ($.browser.msie) {
+			return this.each(function () {
+				if (this.scrollWidth > this.offsetWidth) {
+					$(this).css({ 'padding-bottom' : '20px', 'overflow-y' : 'hidden' });
+				}
+			});
+		} else {
+			return this;
+		}
+	};
+})(jQuery);
+$('pre').fixOverflow();
+</script>
+
+</body>
+</html>
