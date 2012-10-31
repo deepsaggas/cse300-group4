@@ -1,12 +1,11 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8"/>
 	<title>Dashboard: Equip ME</title>
-	<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen,projection" />
-
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script> 
-	<script type="text/javascript" src="js/jquery.jshowoff.min.js"></script>
+	
+	<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen" />
 	<!--[if lt IE 9]>
 	<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" />
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -60,29 +59,27 @@
         $('.column').equalHeight();
     });
 </script>
-<script src='ChangeTab.js'></script>
-<script src='chPageNo.js'></script>
-<script src='onDeleteApp.js'></script>
+
 </head>
 
 
-<body onload="chTab()">
+<body>
 
 	<header id="header">
 		<hgroup>
-			<h1 class="site_title" id='utype1'></h1>
-			<h2 class="section_title" id="SectionTitle">Dashboard</h2><div class="btn_view_site"></div>
+			<h1 class="site_title">FACULTY</h1>
+			<h2 class="section_title">Dashboard</h2><div class="btn_view_site"></div>
 		</hgroup>
 	</header> <!-- end of header bar -->
 	
 	<section id="secondary_bar">
 		<div class="user">
-			<p><a id="username">Ashish Sureka</a> (<a href="#">3 Notifications</a>)</p>
+			<p>Ashish Sureka (<a href="#">3 Notifications</a>)</p>
 			<!-- <a class="logout_user" href="#" title="Logout">Logout</a> -->
 		</div>
 		<div class="breadcrumbs_container">
-			<article class="breadcrumbs"><a href="index.html" id='utype'>Faculty</a> 
-			  <div class="breadcrumb_divider"></div> <a class="current" id='viewTab'>Dashboard</a></article>
+			<article class="breadcrumbs"><a href="index.html">Faculty</a> 
+			  <div class="breadcrumb_divider"></div> <a class="current">Dashboard</a></article>
 		</div>
 	</section><!-- end of secondary bar -->
 	
@@ -100,14 +97,16 @@
 			<li class="icn_tags"><a href="Notifications.html">Notifications</a></li>
 	
 		  <li class="icn_add_user"><a href="Request Tracker.html">Request Tracker</a></li>
-         
+          <li class="icn_edit_article"><a href="Purchase History.html" >Purchase History</a></li>
 	  </ul>
 		<h3>Request Menu</h3>
 		<ul class="toggle">
         <li class="icn_new_article"><!--<a id="overlay" href="equip_purchase.htm">New Request</a>--><a class="lightbox-22643568634460" style="cursor:pointer;color:#666;">New Request</a></li>
-			<li class="icn_folder" onclick="Change('Approved')"><a>Approved</a></li>
-			<li class="icn_photo" onclick="Change('Rejected')"><a>Rejected</a></li>
-			<li class="icn_audio" onclick="Change('Ongoing')"><a>Ongoing</a></li>
+			<li class="icn_folder"><a href="Approved.html">Approved</a></li>
+			<li class="icn_photo"><a href="Rejected.html">Rejected</a></li>
+			<li class="icn_audio"><a href="Ongoing.html">OnGoing</a></li>
+            <li class="icn_photo"><a href="Pending.html" >Pending</a></li>
+			
 	  </ul>
 		<h3>AdminISTRATION</h3>
 		<ul class="toggle">
@@ -122,12 +121,6 @@
 	
 	<section id="main" class="column">
 	  <h4 class="alert_info">Welcome to Equip-Me</h4>
-		</article><!-- end of stats article -->
-         
-		<center>
-           <iframe src="purchaseiframe.html"  width="970px" height="290px" align="middle" scrolling="no" seamless></iframe>
-          
-	</center>
 		
 		<article class="module width_full">
 			<header>
@@ -138,9 +131,19 @@
 				
 				<div class="clear"></div>
 			</div>
+		</article><!-- end of stats article -->
+		<article class="module width_full">
+		  <header>
+		    <h3>purchase  History </h3>
+	      </header>
+		  <img src="images/dell.jpg" alt="photo"/ onMouseOver="zoom()"> <img src="images/hp.jpg" alt="photo"/ onMouseOver="zoom()"> <img src="images/phone.jpg" alt="photo"/ onMouseOver="zoom()"> <img src="images/printer.jpg" alt="photo"/ onMouseOver="zoom()"> </article>
+		<!-- end of content manager article --><!-- end of messages article -->
 		
 	  <div class="clear"></div><!-- end of post new article --><!-- end of styles article -->
 	  <div class="spacer"></div>
 	</section>
+
+
 </body>
+
 </html>
