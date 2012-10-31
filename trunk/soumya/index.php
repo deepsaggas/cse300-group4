@@ -70,13 +70,14 @@ if ($client->getAccessToken()) {
 <!--Dashboard.php head-->
 
 <title>Dashboard: Equip ME</title>
-	
 	<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen" />
 	<!--[if lt IE 9]>
 	<link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" />
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+    <script src="kuchbhi.js" type="text/javascript"></script>
 	<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+    <script src="bannerRotate.js" type="text/javascript"></script>
 	<script src="js/hideshow.js" type="text/javascript"></script>
 	<script src="js/jquery.tablesorter.min.js" type="text/javascript"></script>
 	<script type="text/javascript" src="js/jquery.equalHeight.js"></script>
@@ -124,9 +125,14 @@ if ($client->getAccessToken()) {
         $('.column').equalHeight();
     });
 </script>
+<script src='ChangeTab.js'></script>
+<script src='chPageNo.js'></script>
+<script src='onDeleteApp.js'></script>
+
+<!--Dashboard head-->
 
 </head>
-<body>
+<body onLoad="chTab()">
 <!--<header><h1>Equip Me... Coming Soon</h1></header>-->
 <?php //if(isset($personMarkup)): ?>
 <?php //print $personMarkup ?>
@@ -136,26 +142,60 @@ if ($client->getAccessToken()) {
     //print "<a class='login' href='$authUrl'>Connect Me!</a>";
 	//print "<a class='login' href='https://accounts.google.com/o/oauth2/auth?response_type=code&redirect_uri=http%3A%2F%2Fequipme.com%2Fexamples%2Fuserinfo%2Findex.php&client_id=733055834812.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.google.com%2Fcalendar%2Ffeeds%2F&access_type=offline&approval_prompt=force'>Connect Me!</a>";
 	header('Location: http://equipme.com/index.html');
-  } else {
+  } else { 
+  
+  //checking admin or faculty
+  
+  $flag = 0;
+  
+  $con = mysql_connect('localhost', 'root', 'root');
+if (!$con)
+{
+	die('Could not connect: ' . mysql_error());
+}
+mysql_select_db("group4", $con);
+
+$sql="Select u_id from faculty,authentication where F_id = u_id and F_name='".$name."'";
+$result = mysql_query($sql);
+if($row = mysql_fetch_array($result))
+{
+	$flag = 1;
+}
+$sql="Select u_id from admin,authentication where a_id = u_id and A_name='".$name."'";
+$result = mysql_query($sql);	
+if($row = mysql_fetch_array($result))
+{			
+	$flag = 1;
+}	
+
+mysql_close($con);
+  
    //print "<a class='logout' href='?logout'>Logout</a>";
-   //header('Location: http://equipme.com/Dashboard.php?session='.$_SESSION['token']); ?>
+   //header('Location: http://equipme.com/Dashboard.php?session='.$_SESSION['token']); 
+   if($flag == 0)
+   {
+	   header("Location: http://equipme.com/index.php?logout");
+   }
+   ?>
 
   <!--Dashboard.php--> 
-  <header id="header">
+  
+  <a id='bug'>bugger</a>
+	<header id="header">
 		<hgroup>
-			<h1 class="site_title">FACULTY</h1>
-			<h2 class="section_title">Dashboard</h2><div class="btn_view_site"></div>
+			<h1 class="site_title" id='utype1'></h1>
+			<h2 class="section_title" id="SectionTitle">Dashboard</h2><div class="btn_view_site"></div>
 		</hgroup>
 	</header> <!-- end of header bar -->
 	
 	<section id="secondary_bar">
 		<div class="user">
-			<p><?php echo $name?> (<a href="#">3 Notifications</a>)</p>
+			<p><a id="username"><?php echo $name;?></a> (<a href="#">3 Notifications</a>)</p>
 			<!-- <a class="logout_user" href="#" title="Logout">Logout</a> -->
 		</div>
 		<div class="breadcrumbs_container">
-			<article class="breadcrumbs"><a href="index.html">Faculty</a> 
-			  <div class="breadcrumb_divider"></div> <a class="current">Dashboard</a></article>
+			<article class="breadcrumbs"><a href="index.html" id='utype'></a> 
+			  <div class="breadcrumb_divider"></div> <a class="current" id='viewTab'>Dashboard</a></article>
 		</div>
 	</section><!-- end of secondary bar -->
 	
@@ -164,26 +204,24 @@ if ($client->getAccessToken()) {
 			<input type="text" value="Quick Search" onFocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
 		</form>
 		<hr/>
-		<h3>Content</h3>
+		<h3>Navigator</h3>
 		<ul class="toggle">
-        <li class="icn_tags"><a href="Dashboard.html">DashBoard</a></li>
-			<li class="icn_new_article"><!--<a id="overlay" href="equip_purchase.htm">New Request</a>--><a class="lightbox-22643568634460" style="cursor:pointer;color:#666;">New Request</a></li>
-			<li class="icn_edit_article"><a href="Archive.html">Request Archive</a></li>
+        <li class="icn_tags"><a href="/index.php">DashBoard</a></li>
+			
+			
 			
 			<li class="icn_tags"><a href="Notifications.html">Notifications</a></li>
-		</ul>
-		<h3>Tools</h3>
+	
+		  <li class="icn_add_user"><a href="Request Tracker.html">Request Tracker</a></li>
+          <li class="icn_edit_article"><a href="Purchase History.html" >Purchase History</a></li>
+	  </ul>
+		<h3>Request Menu</h3>
 		<ul class="toggle">
-			<li class="icn_add_user"><a href="Request Tracker.html">Request Tracker</a></li>
-			
-		</ul>
-		<h3>Request status</h3>
-		<ul class="toggle">
-			<li class="icn_folder"><a href="Approved.html">Approved</a></li>
-			<li class="icn_photo"><a href="#">Rejected</a></li>
-			<li class="icn_audio"><a href="#">OnGoing</a></li>
-			<li class="icn_video"><a href="#">Drafts</a></li>
-		</ul>
+        <li class="icn_new_article"><!--<a id="overlay" href="equip_purchase.htm">New Request</a>--><a class="lightbox-22643568634460" style="cursor:pointer;color:#666;">New Request</a></li>
+			<li class="icn_folder" onClick="Change('Approved')"><a href="#">Approved</a></li>
+			<li class="icn_photo" onClick="Change('Rejected')"><a href="#">Rejected</a></li>
+			<li class="icn_audio" onClick="Change('Ongoing')"><a href="#">Ongoing</a></li>
+	  </ul>
 		<h3>AdminISTRATION</h3>
 		<ul class="toggle">
 			<li class="icn_settings"><a href="Profile.html">Profile</a></li>
@@ -208,117 +246,18 @@ if ($client->getAccessToken()) {
 				<div class="clear"></div>
 			</div>
 		</article><!-- end of stats article -->
-		
-		<article class="module width_3_quarter">
-		<header>
-		<h3 class="tabs_involved">Request Manager</h3>
-		<ul class="tabs">
-   			<li><a href="#tab1">Status</a></li>
-    		<li><a href="#tab2">  Date</a></li>
-		</ul>
-		</header>
-
-		<div class="tab_container">
-			<div id="tab1" class="tab_content">
-			<table class="tablesorter" cellspacing="0"> 
-			<thead> 
-				<tr> 
-   					<th></th> 
-    				<th>Entry Name</th> 
-    				<th></th> 
-    				<th>Created On</th> 
-    				<th>Actions</th> 
-				</tr> 
-			</thead> 
-			<tbody> 
-				<tr> 
-   					<td><input type="checkbox"></td> 
-    				<td>Seagate 500 Gb Hard Disk</td> 
-    				<td>Approved</td> 
-    				<td>7th April 2012</td> 
-    				<td><input type="image" src="images/icn_edit.png" title="Edit"><input type="image" src="images/icn_trash.png" title="Trash"></td> 
-				</tr> 
-				
-				<tr> 
-   					<td><input type="checkbox"></td> 
-    				<td>HP Mini Series , 1 GB Ram, 1.7 GHz Atom Processor</td> 
-    				<td>Rejected</td> 
-    				<td>9th April 2012</td> 
-    				<td><input type="image" src="images/icn_edit.png" title="Edit"><input type="image" src="images/icn_trash.png" title="Trash"></td> 
-				</tr> 
-				<tr> 
-   					<td><input type="checkbox"></td> 
-    				<td>HP Laser Desk Printer</td> 
-    				<td>OnGoing</td> 
-    				<td>16th April 2012</td> 
-   				 	<td><input type="image" src="images/icn_edit.png" title="Edit"><input type="image" src="images/icn_trash.png" title="Trash"></td> 
-				</tr>
-                 <tr> 
-   					<td><input type="checkbox"></td> 
-    				<td>Sony Mini Series Laptop</td> 
-    				<td>Pending</td> 
-    				<td>17th April 2012</td> 
-   				 	<td><a href="Ongoing - Director.html"><input type="image" src="images/icn_alert_success.png" title="Approve"></a><input type="image" src="images/icn_alert_error.png" title="Reject"></td> 
-				</tr>
-				
-			</tbody> 
-			</table>
-			</div><!-- end of #tab1 -->
-			
-			<div id="tab2" class="tab_content">
-			<table class="tablesorter" cellspacing="0"> 
-			<thead> 
-				<tr> 
-   					<th></th> 
-    				<th>Entry Name</th> 
-    				<th>Category</th> 
-    				<th> Created On</th> 
-    				<th>Actions</th> 
-				</tr> 
-			</thead> 
-			<tbody> 
-				<tr> 
-   					<td><input type="checkbox"></td> 
-    				<td>HP Laser Desk Printer</td> 
-    				<td>OnGoing</td> 
-    				<td>16th April 2012</td> 
-    				<td><input type="image" src="images/icn_edit.png" title="Edit"><input type="image" src="images/icn_trash.png" title="Trash"></td> 
-				</tr> 
-				
-				<tr> 
-   					<td><input type="checkbox"></td> 
-    				<td>Seagate 500 Gb Hard Disk</td> 
-    				<td>Approved</td> 
-    				<td>7th April 2011</td> 
-    				<td><input type="image" src="images/icn_edit.png" title="Edit"><input type="image" src="images/icn_trash.png" title="Trash"></td> 
-				</tr> 
-				<tr> 
-   					<td><input type="checkbox"></td> 
-    				<td>Dell XPS, 2GB Ram, i7 3rd Generation</td> 
-    				<td>Approved</td> 
-    				<td>6th April 2011</td> 
-   				 	<td><input type="image" src="images/icn_edit.png" title="Edit"><input type="image" src="images/icn_trash.png" title="Trash"></td> 
-				</tr> 
-				 <tr> 
-   					<td><input type="checkbox"></td> 
-    				<td>Sony Mini Series Laptop/td> 
-    				<td>Pending</td> 
-    				<td>17th April 2012</td> 
-   				 	<td><a href="Ongoing - Director.html"><input type="image" src="images/icn_alert_success.png" title="Approve"></a><input type="image" src="images/icn_alert_error.png" title="Reject"></td> 
-				</tr>
-			</tbody> 
-			</table>
-
-			</div><!-- end of #tab2 -->
-			
-		</div><!-- end of .tab_container -->
-        
-		
-		</article><!-- end of content manager article --><!-- end of messages article -->
+		<article class="module width_full">
+		  <header>
+		    <h3>Purchase  History </h3>
+	      </header>
+		  <img src="images/dell.jpg" alt="photo"/ onMouseOver="zoom()"> <img src="images/hp.jpg" alt="photo"/ onMouseOver="zoom()"> <img src="images/phone.jpg" alt="photo"/ onMouseOver="zoom()"> <img src="images/printer.jpg" alt="photo"/ onMouseOver="zoom()"> </article>
+		<!-- end of content manager article --><!-- end of messages article -->
 		
 	  <div class="clear"></div><!-- end of post new article --><!-- end of styles article -->
 	  <div class="spacer"></div>
 	</section>
+  
+  <!--Dashboard.php-->
   
   <?php }
 ?>
