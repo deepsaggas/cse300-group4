@@ -1,9 +1,7 @@
 <?php
 
-//$uname=$_GET['username'];
-//$pg=$_GET['pg'];
-$pg =1;
-$uname="Ashish Sureka";
+$uname=$_GET['username'];
+$pg=$_GET['pg'];
 $con = mysql_connect('localhost', 'root', 'mcgrath');
 if (!$con)
 {

@@ -3,6 +3,7 @@ function Change(str)
 	document.title = str+": Equip ME";
 	var utype=document.getElementById("utype").innerHTML;
 	document.getElementById("SectionTitle").innerHTML=str;
+	document.getElementById("bug3").innerHTML=str;
 	document.getElementById("viewTab").innerHTML=str;
 	if(str=='Profile')
 	{

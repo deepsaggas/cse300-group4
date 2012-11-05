@@ -67,7 +67,7 @@ $adminName = $row3['A_name'];
 
 echo  "$adminName";
 
-$Text = "Form Approved by  ".$adminName."The work done was".$AdminTask; 
+$Text = "Form Approved by  ".$adminName." The work done was ".$AdminTask; 
 
 mysql_query("INSERT INTO notifications (Text,form_id,Read_n) values ('".$Text."','".$formid."',0)");
 

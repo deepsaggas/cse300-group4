@@ -45,6 +45,8 @@ function addApprovedTable(pg)
 			xmlhttp.open("GET","ongf.php?pg="+pg+"&username="+uname,true);
 		else if(document.getElementById("viewTab").innerHTML=='Dashboard')
 			xmlhttp.open("GET","dashf.php?pg="+pg+"&username="+uname,true);
+		else if(document.getElementById("viewTab").innerHTML=='Notifications')
+			xmlhttp.open("GET","notify.php?pg="+pg+"&username="+uname,true);
 	}
 	else if(utype=='Admin')
 		{
