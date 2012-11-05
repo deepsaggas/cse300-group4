@@ -187,7 +187,8 @@ if(isset($authUrl)) {
 
   <!--Dashboard.php--> 
   
-  <a id='bug' hidden='hidden'>bugger</a>
+  <a id='bug'>bugger</a>
+  <a id='bug3'>qwertyuio</a>
 	<header id="header">
 		<hgroup>
 			<h1 class="site_title" id='utype1'></h1>
@@ -218,7 +219,7 @@ if(isset($authUrl)) {
 					<?php
 if($flag==1)
 {
-		echo "<li class='icn_tags' onClick='Change('Notifications')'><a href='#'>Notifications</a></li>";
+			echo "<li class='icn_folder' onClick=\"Change('Notifications')\"><a href='#'>Notifications</a></li>";
 }
 ?>
 	
