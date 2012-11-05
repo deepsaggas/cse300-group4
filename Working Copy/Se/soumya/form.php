@@ -20,7 +20,8 @@ if (isset($_GET['code'])) {
 	header('Location: ' . filter_var($redirect, FILTER_SANITIZE_URL));
 	return;
 }
-
+if(isset($_GET['error']))
+		header('Location: http://localhost/Se/soumya/index.php?logout');
 if (isset($_SESSION['token'])) {
 	$client->setAccessToken($_SESSION['token']);
 }
@@ -39,9 +40,40 @@ if ($client->getAccessToken()) {
 	// The access token may have been updated lazily.
 	$_SESSION['token'] = $client->getAccessToken();
 	echo $name;
-} else {
-	header('Location http://localhost/Se/soumya/index.html');
-}
+		//checking admin or faculty
+	
+	$flag = 0;
+	
+	$con = mysql_connect('localhost', 'root', 'mcgrath');
+	if (!$con)
+	{
+		die('Could not connect: ' . mysql_error());
+	}
+	mysql_select_db("group4", $con);
+	
+	$sql="Select u_id from faculty,authentication where F_id = u_id and u_name='".$email."'";
+	$result = mysql_query($sql);
+	if($row = mysql_fetch_array($result))
+	{
+		$flag = $row['u_id'];//Faculty
+	}
+	$sql="Select u_id from admin,authentication where a_id = u_id and u_name='".$email."'";
+	$result = mysql_query($sql);	
+	if($row = mysql_fetch_array($result))
+	{			
+		$flag = 0;//Admin
+	}	
+	
+	mysql_close($con);
+	
+	//print "<a class='logout' href='?logout'>Logout</a>";
+	//header('Location: http://equipme.com/Dashboard.php?session='.$_SESSION['token']); 
+	if($flag == 0)
+	{
+	header("Location: http://localhost/Se/soumya/index.php?logout");
+	}
+
+	
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
@@ -206,7 +238,7 @@ body,html {
 </script>
 </head>
 <body>
-	<form class="jotform-form" action="http://localhost/Se/soumya/en.php" 	method="post" name="form_22643568634460" id="22643568634460" enctype="multipart/form-data" accept-charset="utf-8" onClick="return(validate());" >
+	<form class="jotform-form" action="http://localhost/Se/soumya/en.php?fac_id=<?php echo $flag; ?>" 	method="post" name="form_22643568634460" id="22643568634460" enctype="multipart/form-data" accept-charset="utf-8" onClick="return(validate());" >
 		<div class="form-all">
 			<ul class="form-section">
 				<li id="cid_1" class="form-input-wide">
@@ -1027,3 +1059,4 @@ body,html {
 	</form>
 </body>
 </html>
+<?php }?>

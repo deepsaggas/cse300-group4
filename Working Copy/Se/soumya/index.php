@@ -26,6 +26,7 @@ $client->setApplicationName("Google UserInfo PHP Starter Application");
 // $client->setClientSecret('insert_your_oauth2_client_secret');
 // $client->setRedirectUri('insert_your_redirect_uri');
 // $client->setDeveloperKey('insert_your_developer_key');
+
 $oauth2 = new Google_Oauth2Service($client);
 
 if (isset($_GET['code'])) {
@@ -145,7 +146,7 @@ if ($client->getAccessToken()) {
 if(isset($authUrl)) {
 	//print "<a class='login' href='$authUrl'>Connect Me!</a>";
 	//print "<a class='login' href='https://accounts.google.com/o/oauth2/auth?response_type=code&redirect_uri=http%3A%2F%2Fequipme.com%2Fexamples%2Fuserinfo%2Findex.php&client_id=733055834812.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.google.com%2Fcalendar%2Ffeeds%2F&access_type=offline&approval_prompt=force'>Connect Me!</a>";
-	header('Location: http://locahost/Se/soumya/index.html');
+	header('Location: http://localhost/Se/soumya/index.html');
 } else { 
 	
 	//checking admin or faculty
@@ -176,9 +177,11 @@ if(isset($authUrl)) {
 	
 	//print "<a class='logout' href='?logout'>Logout</a>";
 	//header('Location: http://equipme.com/Dashboard.php?session='.$_SESSION['token']); 
+	if(isset($_GET['error']))
+		header('Location: http://localhost/Se/soumya/index.php?logout');
 	if($flag == 0)
 	{
-		header("Location: http://locahost/Se/soumya/index.php?logout");
+		header("Location: http://localhost/Se/soumya/index.php?logout");
 	}
 	?>
 
@@ -198,7 +201,7 @@ if(isset($authUrl)) {
 			<!-- <a class="logout_user" href="#" title="Logout">Logout</a> -->
 		</div>
 		<div class="breadcrumbs_container">
-			<article class="breadcrumbs"><a href="index.html" id='utype'></a> 
+			<article class="breadcrumbs"><a href="index.php" id='utype'></a> 
 			  <div class="breadcrumb_divider"></div> <a class="current" id='viewTab'>Dashboard</a></article>
 		</div>
 	</section><!-- end of secondary bar -->	

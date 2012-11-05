@@ -23,7 +23,9 @@ $db_host = 'localhost:3306';
 $db_username = 'root';
 $db_password = 'mcgrath';
 $db_name = 'group4';
-
+$fac_id=$_GET['fac_id'];
+if($fac_id!=0)
+{
 mysql_connect( $db_host, $db_username, $db_password) or die(mysql_error());
 mysql_select_db($db_name);
 
@@ -54,7 +56,7 @@ $temp = mysql_fetch_row($sqlsearch);
 //mysql_query("INSERT INTO committee VALUES ($temp+1,$resultcount+1)") or die(mysql_error());
 $time=date("Y-m-d H:i:s");
 mysql_query("INSERT INTO admin_form_with VALUES (4,$resultcount+1,'$status',NULL,'$time',1,0,'Approve initial request')") or die	(mysql_error());
-mysql_query("INSERT INTO fac_fills_form VALUES (1,$temp[0]+1,$resultcount+1,'$time',0)") or die	(mysql_error());
+mysql_query("INSERT INTO fac_fills_form VALUES ($fac_id,$temp[0]+1,$resultcount+1,'$time',0)") or die	(mysql_error());
 $member1=$_POST['q12_member1'];
 $member2=$_POST['q11_member2'];
 $member3=$_POST['q10_member3'];
@@ -78,7 +80,7 @@ else
 {
 	mysql_query("INSERT INTO admin_form_with VALUES (4,$resultcount+1,'$status',NULL,'$time',1,0,'Approve initial request')") or die	(mysql_error());
 }
-mysql_query("INSERT INTO fac_fills_form VALUES (1,NULL,$resultcount+1,'$time',0)") or die	(mysql_error());
+mysql_query("INSERT INTO fac_fills_form VALUES ($fac_id,NULL,$resultcount+1,'$time',0)") or die	(mysql_error());
 }
 $item_name="";
 
@@ -189,5 +191,11 @@ for($i=1;$i<=$number_of_items;$i++)
 }
 
 mysql_query("INSERT INTO form_club_item VALUES ($resultcount+1,'$item_name')") or die(mysql_error());
-header( 'Location: http://localhost/Se/soumya/thankyou.html' ) ;
+header( 'Location: http://localhost/Se/soumya/index.php' ) ;
+}
+else
+{
+	header( 'Location: http://localhost/Se/soumya/index.php?logout' ) ;
+	
+}
 ?>
