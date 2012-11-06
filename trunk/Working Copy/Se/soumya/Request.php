@@ -4,7 +4,7 @@ $form_id=$_GET['form_id'];
 
 $db_host = 'localhost:3306';
 $db_username = 'root';
-$db_password = 'mcgrath';
+$db_password = '';
 $db_name = 'group4';
 
 mysql_connect( $db_host, $db_username, $db_password) or die(mysql_error());
@@ -34,23 +34,17 @@ $result7 = mysql_fetch_row($sqlsearch);
 	content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
 <meta name="HandheldFriendly" content="true" />
 <title>Equipment Purchase</title>
-<style>
-body {
-	font-size: 16px;
-	font-family: Verdana;
-}
 </style>
 </head>
 <body>
 	<p></p>
-		<b>Request by</b>
-		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		<b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspRequest by</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 		<?php echo $result5[0]?>
 	<br>
 	<?php 
 if(is_null($result2[1])==false)
 {
-	echo "<b>Committee Members &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </b>";
+	echo "<b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCommittee Members&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </b>";
 	$query="Select F_id from member where c_id=$result2[1]";
 	$sqlsearch = mysql_query($query);
 	for($i=1;$i<=3;$i++){
@@ -66,21 +60,19 @@ if(is_null($result2[1])==false)
 }
 ?>
 	<!--  display the changed record from database -->
-	<b>Purchase Expected Before</b> &nbsp&nbsp
+	<b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPurchase Expected Before</b> &nbsp&nbsp
 	<?php echo $result1[3]?>
-	<br> <b>Source of Funds</b>
-	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	<br> <b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSource of Funds</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 	<?php echo $result1[0]?>
 	<?php 
 if(strcmp($result1[0],"Project Fund")==0){
 	$query="Select p_name
 		from project where form_id=$form_id"; $sqlsearch = mysql_query($query);
 		$result4 = mysql_fetch_row($sqlsearch);
-		echo "<br><b> Name of Project</b> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".$result4[0];
+		echo "<br><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspName of Project</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp".$result4[0];
 }
 ?>
-	<br> <b>Number of Items</b>
-	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	<br> <b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNumber of Items</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 	<?php echo $result7[0]?>
 	<br>
 	<br>
@@ -91,17 +83,17 @@ $sqlsearch = mysql_query($query);
 $totalcost=0;
 for($i=1;$i<=$result7[0];$i++){
 	$result6 = mysql_fetch_row($sqlsearch);
-	echo "<b>Item ".$i."</b>";
+	echo "<b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspItem ".$i."</b>";
 	echo "<br><br>";
-	echo "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Name : ".$result6[1]."<br>";
-	echo "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Cost : Rs ".$result6[2]." per unit<br>";
-	echo "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Quantity : ".$result6[3]."<br>";
-	echo "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Description : ".$result6[4]."<br>";
+	echo "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Name :</b> ".$result6[1]."<br>";
+	echo "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Cost :</b> Rs ".$result6[2]." per unit<br>";
+	echo "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Quantity :</b> ".$result6[3]."<br>";
+	echo "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>Description :</b> ".$result6[4]."<br>";
 	$totalcost+=$result6[2]*$result6[3];
 	if(strcmp($result6[6],"")!=0)
-		echo "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp List of Suppliers : ".$result6[6]."<br><br>";
+		echo "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <b>List of Suppliers :</b> ".$result6[6]."<br><br>";
 }
-echo "<br><br><b>Total Cost = Rs ".$totalcost."</b>";
+echo "<br><br><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTotal Cost = Rs ".$totalcost."</b>";
 ?>
 	<br>
 	<br>
