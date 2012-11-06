@@ -1,0 +1,2 @@
+Install the Pecl_http extension to get the HttpRequest() class to work for sending post request.
+Include php_openssl.dll
