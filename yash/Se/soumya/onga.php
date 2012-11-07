@@ -1,13 +1,13 @@
 <?php
 $pg=$_GET['pg'];
 $uname=$_GET['username'];
-$con = mysql_connect('localhost', 'root', '');
+$con = mysql_connect('localhost', 'root', 'mcgrath');
 if (!$con)
 {
 	die('Could not connect: ' . mysql_error());
 }
 mysql_select_db("group4",$con);
-$sql="Select item_name,A_timestamp,A_reason,form_id,F_name from mainview2 where A_name='".$uname."' and form_status='Ongoing' and Deleted_Ad=0 ORDER BY A_timestamp DESC";
+$sql="Select item_name,A_timestamp,form_id,F_name from mainview2 where A_name='".$uname."' and form_status='Ongoing' and Deleted_Ad=0 ORDER BY A_timestamp DESC";
 $id=1;
 $result = mysql_query($sql);
 $show=1;
@@ -16,7 +16,7 @@ while($row = mysql_fetch_array($result))
 {	
 	if($show<=$va && $show>($va-10))
 	{
-		$sql1="Select A_reason,A_name from mainview2 where F_name='".$row['F_name']."' and form_id='".$row['form_id']."' and A_status=form_status ORDER BY A_timestamp DESC";
+		$sql1="Select A_name from mainview2 where F_name='".$row['F_name']."' and form_id='".$row['form_id']."' and A_present=1 ORDER BY A_timestamp DESC";
 		$result1=mysql_query($sql1);
 		$row1 = mysql_fetch_array($result1);
 		echo "<tr id='".$id."'>";

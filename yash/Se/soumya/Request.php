@@ -4,7 +4,7 @@ $form_id=$_GET['form_id'];
 
 $db_host = 'localhost:3306';
 $db_username = 'root';
-$db_password = '';
+$db_password = 'mcgrath';
 $db_name = 'group4';
 
 mysql_connect( $db_host, $db_username, $db_password) or die(mysql_error());

@@ -1,6 +1,6 @@
 <?php	
 $formid =$_GET['form_id'];
-$con = mysql_connect('localhost', 'root', '');
+$con = mysql_connect('localhost', 'root', 'mcgrath');
 if (!$con)
 {
 	die('Could not connect: ' . mysql_error());
@@ -101,7 +101,7 @@ $adminName = $row3['A_name'];
 
 echo  "$adminName";
 
-$Text = "Form Approved by  ".$adminName."The work done was".$AdminTask; 
+$Text = "Form Approved by  ".$adminName." The work done was".$AdminTask; 
 
 mysql_query("INSERT INTO notifications (Text,form_id,Read_n) values ('".$Text."','".$formid."',0)");
 
@@ -133,7 +133,7 @@ $adminName = $row3['A_name'];
 
 echo  "$adminName";
 
-$Text = "Form Approved by  ".$adminName."The work done was".$AdminTask; 
+$Text = "Form Approved by  ".$adminName."The work done was ".$AdminTask; 
 
 mysql_query("INSERT INTO notifications (Text,form_id,Read_n) values ('".$Text."','".$formid."',0)");
 
@@ -168,7 +168,7 @@ $adminName = $row3['A_name'];
 
 echo  "$adminName";
 
-$Text = "Form Approved by  ".$adminName."The work done was".$AdminTask; 
+$Text = "Form Approved by  ".$adminName." The work done was ".$AdminTask; 
 
 mysql_query("INSERT INTO notifications (Text,form_id,Read_n) values ('".$Text."','".$formid."',0)");
 
@@ -202,7 +202,7 @@ $adminName = $row3['A_name'];
 
 echo  "$adminName";
 
-$Text = "Form Approved by  ".$adminName."The work done was".$AdminTask; 
+$Text = "Form Approved by  ".$adminName." The work done was ".$AdminTask; 
 
 mysql_query("INSERT INTO notifications (Text,form_id,Read_n) values ('".$Text."','".$formid."',0)");
 
@@ -229,7 +229,7 @@ $adminName = $row3['A_name'];
 
 echo  "$adminName";
 
-$Text = "Form Approved by All,Process  is Over "; 
+$Text = "Form Approved by All, Process  is Over "; 
 
 mysql_query("INSERT INTO notifications (Text,form_id,Read_n) values ('".$Text."','".$formid."',0)");
 
@@ -279,7 +279,7 @@ $adminName = $row3['A_name'];
 
 echo  "$adminName";
 
-$Text = "Form Approved by  ".$adminName."The work done was".$AdminTask; 
+$Text = "Form Approved by  ".$adminName." The work done was ".$AdminTask; 
 
 mysql_query("INSERT INTO notifications (Text,form_id,Read_n) values ('".$Text."','".$formid."',0)");
 
@@ -320,7 +320,7 @@ $adminName = $row3['A_name'];
 
 echo  "$adminName";
 
-$Text = "Form Approved by  ".$adminName."The work done was".$AdminTask; 
+$Text = "Form Approved by  ".$adminName." The work done was ".$AdminTask; 
 
 mysql_query("INSERT INTO notifications (Text,form_id,Read_n) values ('".$Text."','".$formid."',0)");
 
@@ -354,7 +354,7 @@ $adminName = $row3['A_name'];
 
 echo  "$adminName";
 
-$Text = "Form Approved by  ".$adminName."The work done was".$AdminTask; 
+$Text = "Form Approved by  ".$adminName." The work done was ".$AdminTask; 
 
 mysql_query("INSERT INTO notifications (Text,form_id,Read_n) values ('".$Text."','".$formid."',0)");
 
@@ -386,7 +386,7 @@ $adminName = $row3['A_name'];
 
 echo  "$adminName";
 
-$Text = "Form Approved by  ".$adminName."The work done was".$AdminTask; 
+$Text = "Form Approved by  ".$adminName." The work done was ".$AdminTask; 
 
 mysql_query("INSERT INTO notifications (Text,form_id,Read_n) values ('".$Text."','".$formid."',0)");
 
@@ -421,7 +421,7 @@ $adminName = $row3['A_name'];
 
 echo  "$adminName";
 
-$Text = "Form Approved by  ".$adminName."The work done was".$AdminTask; 
+$Text = "Form Approved by  ".$adminName." The work done was ".$AdminTask; 
 
 mysql_query("INSERT INTO notifications (Text,form_id,Read_n) values ('".$Text."','".$formid."',0)");
 
@@ -455,7 +455,7 @@ $adminName = $row3['A_name'];
 
 echo  "$adminName";
 
-$Text = "Form Approved by  ".$adminName."The work done was".$AdminTask; 
+$Text = "Form Approved by  ".$adminName." The work done was ".$AdminTask; 
 
 mysql_query("INSERT INTO notifications (Text,form_id,Read_n) values ('".$Text."','".$formid."',0)");
 
@@ -540,7 +540,7 @@ $adminName = $row3['A_name'];
 
 echo  "$adminName";
 
-$Text = "Form Approved by  ".$adminName."The work done was".$AdminTask; 
+$Text = "Form Approved by  ".$adminName." The work done was ".$AdminTask; 
 
 mysql_query("INSERT INTO notifications (Text,form_id,Read_n) values ('".$Text."','".$formid."',0)");
 
@@ -581,7 +581,7 @@ $adminName = $row3['A_name'];
 
 echo  "$adminName";
 
-$Text = "Form Approved by  ".$adminName."The work done was".$AdminTask; 
+$Text = "Form Approved by  ".$adminName." The work done was ".$AdminTask; 
 
 mysql_query("INSERT INTO notifications (Text,form_id,Read_n) values ('".$Text."','".$formid."',0)");
 
@@ -615,7 +615,7 @@ $adminName = $row3['A_name'];
 
 echo  "$adminName";
 
-$Text = "Form Approved by  ".$adminName."The work done was".$AdminTask; 
+$Text = "Form Approved by  ".$adminName." The work done was ".$AdminTask; 
 
 mysql_query("INSERT INTO notifications (Text,form_id,Read_n) values ('".$Text."','".$formid."',0)");
 
@@ -647,7 +647,7 @@ $adminName = $row3['A_name'];
 
 echo  "$adminName";
 
-$Text = "Form Approved by  ".$adminName."The work done was".$AdminTask; 
+$Text = "Form Approved by  ".$adminName." The work done was ".$AdminTask; 
 
 mysql_query("INSERT INTO notifications (Text,form_id,Read_n) values ('".$Text."','".$formid."',0)");
 
@@ -686,7 +686,7 @@ $adminName = $row3['A_name'];
 
 echo  "$adminName";
 
-$Text = "Form Approved by  ".$adminName."The work done was".$AdminTask; 
+$Text = "Form Approved by  ".$adminName." The work done was ".$AdminTask; 
 
 mysql_query("INSERT INTO notifications (Text,form_id,Read_n) values ('".$Text."','".$formid."',0)");
 
@@ -713,7 +713,7 @@ $adminName = $row3['A_name'];
 
 echo  "$adminName";
 
-$Text = "Form Approved by All,Process  is Over "; 
+$Text = "Form Approved by All, Process  is Over "; 
 
 mysql_query("INSERT INTO notifications (Text,form_id,Read_n) values ('".$Text."','".$formid."',0)");
 
