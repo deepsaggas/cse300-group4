@@ -1,6 +1,6 @@
 <?php
 $uname=$_GET['username'];
-$con = mysql_connect('localhost', 'root', '');
+$con = mysql_connect('localhost', 'root', 'mcgrath');
 if (!$con)
 {
 	die('Could not connect: ' . mysql_error());

@@ -21,7 +21,7 @@ date_default_timezone_set($timezone);
 
 $db_host = 'localhost:3306';
 $db_username = 'root';
-$db_password = '';
+$db_password = 'mcgrath';
 $db_name = 'group4';
 $fac_id=$_GET['fac_id'];
 $source_of_fund= $_POST['q71_sourceOf'];

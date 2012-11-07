@@ -1,13 +1,13 @@
 <?php
 $pg=$_GET['pg'];
 $uname=$_GET['username'];
-$con = mysql_connect('localhost', 'root', '');
+$con = mysql_connect('localhost', 'root', 'mcgrath');
 if (!$con)
 {
 	die('Could not connect: ' . mysql_error());
 }
 mysql_select_db("group4",$con);
-$sql="Select item_name,A_timestamp,A_reason,form_id,F_name from mainview2 where A_name='".$uname."' and form_status='Rejected' and Deleted_Ad=0 ORDER BY A_timestamp DESC";
+$sql="Select item_name,max(A_timestamp),A_reason,form_id,F_name from mainview2 where A_name='".$uname."' and form_status='Rejected' and Deleted_Ad=0 GROUP BY form_id ORDER BY A_timestamp DESC";
 $id=1;
 $result = mysql_query($sql);
 $show=1;
@@ -26,7 +26,7 @@ while($row = mysql_fetch_array($result))
 		echo "<td>".$row['F_name']."</td>";		
 		echo "<td>".$row1['A_reason']."</td>";
 		echo "<td>".$row1['A_name']."</td>";
-		echo "<td>".$row['A_timestamp']."</td>";
+		echo "<td>".$row['max(A_timestamp)']."</td>";
 		echo "<td><input type='button' value='View Form' onclick='(dispForm(".$row['form_id']."))'></input></td>";
 		echo "</tr>";				
 		$id=$id+1;

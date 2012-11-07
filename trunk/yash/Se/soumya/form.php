@@ -44,7 +44,7 @@ if ($client->getAccessToken()) {
 	
 	$flag = 0;
 	
-	$con = mysql_connect('localhost', 'root', '');
+	$con = mysql_connect('localhost', 'root', 'mcgrath');
 	if (!$con)
 	{
 		die('Could not connect: ' . mysql_error());
@@ -948,7 +948,7 @@ body,html {
 							echo "<select class=\"form-dropdown validate[required]\" style=\"width:150px\" id=\"input_12\" name=\"q12_member1\">";
 							$db_host = 'localhost:3306';
 							$db_username = 'root';
-							$db_password = '';
+							$db_password = 'mcgrath';
 							$db_name = 'group4';
 							mysql_connect( $db_host, $db_username, $db_password) or die(mysql_error());
 							mysql_select_db($db_name);

@@ -3,7 +3,7 @@ $pg=$_GET['pg'];
 $uname=$_GET['username'];
 //$pg=1;
 //$uname='Amarjeet Singh';
-$con = mysql_connect('localhost', 'root', '');
+$con = mysql_connect('localhost', 'root', 'mcgrath');
 if (!$con)
 {
 	die('Could not connect: ' . mysql_error());
