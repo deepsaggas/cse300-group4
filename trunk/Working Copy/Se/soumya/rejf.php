@@ -1,13 +1,13 @@
 <?php
 $pg=$_GET['pg'];
 $uname=$_GET['username'];
-$con = mysql_connect('localhost', 'root', 'mcgrath');
+$con = mysql_connect('localhost', 'root', '');
 if (!$con)
 {
 	die('Could not connect: ' . mysql_error());
 }
 mysql_select_db("group4",$con);
-$sql="Select item_name,A_timestamp,A_reason,form_id,A_name from mainview2 where F_name='".$uname."' and form_status='Rejected' and A_status=form_status and Deleted_Fac=0 ORDER BY A_timestamp DESC";
+$sql="Select item_name,max(A_timestamp),A_reason,form_id,A_name from mainview2 where F_name='".$uname."' and form_status='Rejected' and A_status=form_status and Deleted_Fac=0 GROUP BY form_id ORDER BY A_timestamp DESC";
 $id=1;
 $result = mysql_query($sql);
 $show=1;

@@ -83,7 +83,47 @@ if ($client->getAccessToken()) {
 	<script src="js/hideshow.js" type="text/javascript"></script>
 	<script src="js/jquery.tablesorter.min.js" type="text/javascript"></script>
 	<script type="text/javascript" src="js/jquery.equalHeight.js"></script>
-	<script src="createProfile.js">
+	<script src="createProfile.js"></script>
+	<script type="text/javascript" src="../lib/jquery-1.8.2.min.js"></script>
+
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="../lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="../source/jquery.fancybox.js?v=2.1.3"></script>
+	<link rel="stylesheet" type="text/css" href="../source/jquery.fancybox.css?v=2.1.2" media="screen" />
+
+	<!-- Add Button helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="../source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+	<script type="text/javascript" src="../source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+
+	<!-- Add Thumbnail helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="../source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+	<script type="text/javascript" src="../source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+	<!-- Add Media helper (this is optional) -->
+	<script type="text/javascript" src="../source/helpers/jquery.fancybox-media.js?v=1.0.5"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+	$(".various").fancybox({
+		maxWidth	: 800,
+		maxHeight	: 600,
+		fitToView	: true,
+		width		: '70%',
+		height		: '90%',
+		autoSize	: false,
+		closeClick	: false,
+		openEffect	: 'none',
+		closeEffect	: 'none'
+	});
+});
+	</script>
+	<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+	</style>
     <script src="http://max.jotfor.ms/min/g=feedback2" type="text/javascript">
     
 	new JotformFeedback({
@@ -153,7 +193,7 @@ if(isset($authUrl)) {
 	
 	$flag = 0;
 	
-	$con = mysql_connect('localhost', 'root', 'mcgrath');
+	$con = mysql_connect('localhost', 'root', '');
 	if (!$con)
 	{
 		die('Could not connect: ' . mysql_error());
@@ -198,7 +238,7 @@ if(isset($authUrl)) {
 	
 	<section id="secondary_bar">
 		<div class="user">
-			<p><a id="username"><?php echo $name; ?></a> (<a href="#">Notifications</a>)</p>
+			<p><a id="username"><?php echo $name; ?></a> (<a onClick="Change('Notifications')" href="#">Notifications</a>)</p>
 			<!-- <a class="logout_user" href="#" title="Logout">Logout</a> -->
 		</div>
 		<div class="breadcrumbs_container">
@@ -220,6 +260,7 @@ if(isset($authUrl)) {
 if($flag==1)
 {
 			echo "<li class='icn_folder' onClick=\"Change('Notifications')\"><a href='#'>Notifications</a></li>";
+			
 }
 ?>
 	
@@ -230,7 +271,8 @@ if($flag==1)
 		<?php
 if($flag==1)
 {
-	echo "<li class='icn_folder'><a href='form.php'>New Request</a></li>";
+	echo "<li class='icn_folder'><a class=\"various\" data-fancybox-type=\"iframe\" href=\"form.php\">New Request</a></li>";
+	//<a class="various" data-fancybox-type="iframe" href="/demo/iframe.html">Iframe</a>
 }
 ?>
 			<li class="icn_folder" onClick="Change('Approved')"><a href="#">Approved</a></li>
