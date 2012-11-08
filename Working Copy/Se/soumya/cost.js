@@ -5,6 +5,19 @@ function validate()
 	var ulimit=0;
 	var llimit=0;
 	var num=0;
+	
+	if(document.getElementById("input_5").value==""){
+		document.getElementById("label_5").innerHTML = 'This field is required';
+		return false;
+	}
+	if(document.getElementById("input_71").value=="")	
+		document.getElementById("input_71").innerHTML = 'This field is required';
+	else if(document.getElementById("input_72").value=="Project Fund" && document.getElementById("input_72").value==""){
+		document.getElementById("input_72").innerHTML = 'This field is required';
+	}	
+	if(document.getElementById("input_7").value==""){
+		document.getElementById("input_7").innerHTML = 'This field is required';
+
 	if(document.form_22643568634460.q5_category.value=="Rs 0 - Rs 50,000")
 	{	llimit=0;
 		ulimit=50000;

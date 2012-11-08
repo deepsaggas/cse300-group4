@@ -1,6 +1,6 @@
 <?php	
 $formid =$_GET['form_id'];
-$con = mysql_connect('localhost', 'root', 'mcgrath');
+$con = mysql_connect('localhost', 'root', '');
 if (!$con)
 {
 	die('Could not connect: ' . mysql_error());

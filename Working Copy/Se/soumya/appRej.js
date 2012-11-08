@@ -5,10 +5,9 @@ var pg ;
  if(r==true){
 
 pg=prompt("Please enter the reason of rejection","Funds not Sufficient");
-	 
+	 location.reload(true);
  var xmlhttp; 
 
-var str = "Ashish Sureka";   
 
 if (window.XMLHttpRequest)
   {// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -23,8 +22,7 @@ xmlhttp.onreadystatechange=function()
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
     document.getElementById("bug").innerHTML=xmlhttp.responseText;
-		addApprovedTable(1);
-		window.location.reload();
+	
 
     }
   }
@@ -50,6 +48,7 @@ var r = confirm("Accept the form ?");
      
 
  var xmlhttp; 
+	 location.reload(true);
 
 
 if (window.XMLHttpRequest)
@@ -66,7 +65,6 @@ xmlhttp.onreadystatechange=function()
     {
 	text=xmlhttp.responseText;
     document.getElementById("bug1").innerHTML=text;
-	//window.location.reload();
     }
   }
 xmlhttp.open("GET","Admapprove.php?form_id="+form_id,true);

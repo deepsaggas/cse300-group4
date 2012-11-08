@@ -1,6 +1,6 @@
 <?php
 $uname=$_GET['username'];
-$con = mysql_connect('localhost', 'root', 'mcgrath');
+$con = mysql_connect('localhost', 'root', '');
 if (!$con)
 {
 	die('Could not connect: ' . mysql_error());
@@ -10,8 +10,8 @@ $sql="Select F_name as n,url from profile,faculty where F_name='".$uname."' && F
 $result = mysql_query($sql);
 while($row = mysql_fetch_array($result))
 {	
-		echo "<h1> $row[n] </h1>";
-		echo "<img src='images_1/$row[n].jpg'>" ; 
+		echo "<h1> $row[n] </h1>";		
+		echo "<a class=\"various\" href=\"images_1/$row[n].jpg\"><img src='images_1/$row[n].jpg'></img></a>" ; 		
 		echo "<p>&nbsp</p>";
 		echo "<p>Indraprastha Institute of Information Technology Delhi (IIIT-D)</p>";
 		$url=$row['url'];
